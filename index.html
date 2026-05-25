@@ -10,59 +10,49 @@
 <style>
 *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
 :root{
-  --blue:#003781;--blue-hover:#002a61;--blue-light:#EEF4FF;--blue-mid:#1E4DA3;
+  --blue:#003781;--blue-light:#EEF4FF;--blue-mid:#1E4DA3;
   --green:#00A651;--green-light:#ECFDF5;
-  --bg:#FFFFFF;--surface:#F8FAFC;--surface2:#F1F5F9;
+  --bg:#fff;--surface:#F8FAFC;--surface2:#F1F5F9;
   --border:#E2E8F0;--border2:#CBD5E1;
   --text:#0F172A;--muted:#64748B;--light:#94A3B8;
-  --sidebar:260px;--font:'Plus Jakarta Sans',sans-serif;
+  --sidebar:268px;--font:'Plus Jakarta Sans',sans-serif;
 }
 html{scroll-behavior:smooth}
 body{font-family:var(--font);background:var(--bg);color:var(--text);line-height:1.6;font-size:16px}
-
 .layout{display:flex;min-height:100vh}
 
-/* Sidebar */
-.sidebar{
-  width:var(--sidebar);min-width:var(--sidebar);position:sticky;top:0;
-  height:100vh;overflow-y:auto;border-right:1px solid var(--border);
-  background:var(--bg);display:flex;flex-direction:column;z-index:100;
-}
-.sb-head{padding:18px 20px 14px;border-bottom:1px solid var(--border)}
-.sb-logo{display:flex;align-items:center;gap:8px;text-decoration:none}
+/* ── Sidebar ── */
+.sidebar{width:var(--sidebar);min-width:var(--sidebar);position:sticky;top:0;height:100vh;overflow-y:auto;border-right:1px solid var(--border);background:var(--bg);display:flex;flex-direction:column;z-index:100}
+.sb-head{padding:20px 22px 16px;border-bottom:1px solid var(--border)}
+.sb-logo{display:flex;align-items:center;gap:9px;text-decoration:none}
 .sb-mark{width:28px;height:28px;background:var(--blue);border-radius:5px;display:flex;align-items:center;justify-content:center;color:#fff;font-weight:800;font-size:13px;flex-shrink:0}
 .sb-name{font-size:15px;font-weight:700;color:var(--blue);letter-spacing:-.3px}
 .sb-sub{font-size:11px;color:var(--muted);font-weight:600;text-transform:uppercase;letter-spacing:.6px;margin-top:5px}
 .sb-nav{padding:10px 0;flex:1}
-.nav-gl{font-size:10.5px;font-weight:700;text-transform:uppercase;letter-spacing:1px;color:var(--light);padding:10px 20px 3px}
-.nav-a{
-  display:flex;align-items:center;gap:8px;padding:7px 20px;
-  font-size:13.5px;font-weight:500;color:var(--muted);text-decoration:none;
-  border-left:2px solid transparent;transition:all .12s;
-}
+.nav-gl{font-size:10.5px;font-weight:700;text-transform:uppercase;letter-spacing:1px;color:var(--light);padding:10px 22px 3px}
+.nav-a{display:flex;align-items:center;gap:9px;padding:7px 22px;font-size:13.5px;font-weight:500;color:var(--muted);text-decoration:none;border-left:2px solid transparent;transition:all .12s}
 .nav-a:hover{color:var(--text);background:var(--surface)}
 .nav-a.active{color:var(--blue);background:var(--blue-light);border-left-color:var(--blue);font-weight:600}
 .nav-ic{width:14px;height:14px;flex-shrink:0;opacity:.6}
 
-/* Content */
+/* ── Content ── */
 .content{flex:1;min-width:0}
-.sec{padding:52px 60px;border-bottom:1px solid var(--border)}
+.sec{padding:52px 64px;border-bottom:1px solid var(--border)}
 .sec.alt{background:var(--surface)}
-
 .sec-badge{display:inline-flex;align-items:center;background:var(--blue-light);color:var(--blue);font-size:11.5px;font-weight:700;text-transform:uppercase;letter-spacing:.8px;padding:4px 11px;border-radius:4px;margin-bottom:12px}
 .sec-title{font-size:30px;font-weight:800;color:var(--text);line-height:1.2;margin-bottom:12px;letter-spacing:-.5px}
 .sec-desc{font-size:16px;color:var(--muted);max-width:660px;margin-bottom:32px;line-height:1.8}
 
-/* Mock browser */
+/* ── Mock browser ── */
 .mock{border-radius:10px;overflow:hidden;border:1px solid var(--border);box-shadow:0 4px 24px rgba(0,0,0,.07);background:#fff}
 .mock-chrome{background:#F1F3F4;padding:8px 12px;display:flex;align-items:center;gap:8px;border-bottom:1px solid #DADCE0}
 .dots{display:flex;gap:4px}
 .dot{width:10px;height:10px;border-radius:50%}
 .dot.r{background:#FF5F57}.dot.y{background:#FFBD2E}.dot.g{background:#28CA41}
 .mock-url{flex:1;background:#fff;border-radius:4px;padding:3px 10px;font-size:12px;color:#5F6368;font-family:monospace}
-.mock-top{background:#fff;border-bottom:1px solid var(--border);padding:0 16px;display:flex;align-items:center;height:48px;gap:0}
-.mock-top-logo{font-size:13px;font-weight:800;color:var(--blue);display:flex;align-items:center;gap:6px;margin-right:16px}
-.mock-top-mark{width:20px;height:20px;background:var(--blue);border-radius:3px;display:inline-flex;align-items:center;justify-content:center;color:#fff;font-size:9px;font-weight:800}
+.mock-top{background:#fff;border-bottom:1px solid var(--border);padding:0 16px;display:flex;align-items:center;height:48px}
+.mock-logo{font-size:13px;font-weight:800;color:var(--blue);display:flex;align-items:center;gap:6px;margin-right:18px}
+.mock-logo-mark{width:20px;height:20px;background:var(--blue);border-radius:3px;display:inline-flex;align-items:center;justify-content:center;color:#fff;font-size:9px;font-weight:800}
 .mock-navs{display:flex;gap:1px;flex:1}
 .mni{padding:5px 11px;font-size:12.5px;font-weight:500;color:var(--muted);border-radius:4px}
 .mni.on{background:var(--blue-light);color:var(--blue);font-weight:600}
@@ -70,32 +60,36 @@ body{font-family:var(--font);background:var(--bg);color:var(--text);line-height:
 .mock-body{padding:20px;background:var(--surface)}
 .mock-body.w{background:#fff}
 
-/* Cards */
+/* ── KPI cards ── */
 .cards4{display:grid;grid-template-columns:repeat(4,1fr);gap:10px;margin-bottom:16px}
-.cards2{display:grid;grid-template-columns:repeat(2,1fr);gap:10px;margin-bottom:10px}
-.kpi{background:#fff;border:1px solid var(--border);border-radius:7px;padding:12px 14px}
+.cards2{display:grid;grid-template-columns:repeat(2,1fr);gap:10px;margin-bottom:12px}
+.kpi{background:#fff;border:1px solid var(--border);border-radius:7px;padding:13px 15px}
 .kpi-l{font-size:11px;font-weight:600;color:var(--muted);text-transform:uppercase;letter-spacing:.5px;margin-bottom:5px}
 .kpi-v{font-size:22px;font-weight:800;color:var(--text);letter-spacing:-.5px}
 .kpi-s{font-size:11px;color:var(--light);margin-top:2px}
 .kpi-up{font-size:11px;color:var(--green);font-weight:600}
 
-/* Badges */
+/* ── Badges ── */
 .badge{display:inline-flex;align-items:center;padding:3px 8px;border-radius:4px;font-size:12px;font-weight:600;white-space:nowrap}
 .b-lodged{background:#EFF6FF;color:#1D4ED8}
 .b-elig{background:#FEF3C7;color:#92400E}
-.b-assigned{background:#E0F2FE;color:#075985}
-.b-progress{background:#FEF3C7;color:#92400E}
-.b-complete{background:#D1FAE5;color:#065F46}
+.b-alloc{background:#E0F2FE;color:#075985}
+.b-prog{background:#FEF3C7;color:#92400E}
+.b-draft{background:#F3E8FF;color:#6B21A8}
+.b-sub{background:#ECFDF5;color:#065F46}
+.b-auth{background:#FEF9C3;color:#713F12}
 .b-closed{background:#F1F5F9;color:#475569}
-.b-approved{background:#D1FAE5;color:#065F46}
-.b-rejected{background:#FEE2E2;color:#991B1B}
+.b-refused{background:#FEE2E2;color:#991B1B}
+.b-sched{background:#E0F2FE;color:#075985}
+.b-complete{background:#D1FAE5;color:#065F46}
 .b-gray{background:#F1F5F9;color:#475569}
 .b-small{background:#ECFDF5;color:#065F46}
 .b-medium{background:#EFF6FF;color:#1D4ED8}
 .b-large{background:#FDF4FF;color:#7E22CE}
 .b-green{background:var(--green-light);color:#065F46}
+.b-esg{background:#ECFDF5;color:#065F46}
 
-/* Table */
+/* ── Table ── */
 .tw{background:#fff;border:1px solid var(--border);border-radius:8px;overflow:hidden}
 .tw-head{padding:10px 14px;display:flex;align-items:center;justify-content:space-between;border-bottom:1px solid var(--border)}
 .tw-title{font-size:13.5px;font-weight:700;color:var(--text)}
@@ -105,13 +99,14 @@ body{font-family:var(--font);background:var(--bg);color:var(--text);line-height:
 .t tr:last-child td{border-bottom:none}
 .t tr:hover td{background:var(--surface)}
 .tid{font-family:monospace;font-size:12.5px;color:var(--blue);font-weight:600}
+.tsub{font-size:10.5px;color:var(--muted);margin-top:1px}
 
-/* Filter chips */
+/* ── Chips ── */
 .chips{display:flex;gap:5px;flex-wrap:wrap;margin-bottom:12px}
 .chip{padding:4px 12px;border-radius:20px;font-size:12.5px;font-weight:600;border:1px solid var(--border);background:#fff;color:var(--muted)}
 .chip.on{background:var(--blue);color:#fff;border-color:var(--blue)}
 
-/* Form */
+/* ── Form ── */
 .fg{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-bottom:14px}
 .f{display:flex;flex-direction:column;gap:3px}
 .f.full{grid-column:1/-1}
@@ -119,33 +114,36 @@ body{font-family:var(--font);background:var(--bg);color:var(--text);line-height:
 .fi{border:1px solid var(--border);border-radius:5px;padding:7px 10px;font-size:13px;color:var(--muted);background:#fff}
 .fi.v{color:var(--text);border-color:var(--border2)}
 .fi.foc{border-color:var(--blue);box-shadow:0 0 0 2px var(--blue-light);color:var(--text)}
+.fopt{font-size:10.5px;color:var(--light);margin-top:1px}
 
-/* Buttons */
+/* ── Buttons ── */
 .btn{display:inline-flex;align-items:center;justify-content:center;gap:5px;padding:8px 16px;border-radius:5px;font-size:13px;font-weight:600;font-family:var(--font)}
 .btn-p{background:var(--blue);color:#fff}
 .btn-s{background:#fff;color:var(--text);border:1px solid var(--border)}
 .btn-g{background:var(--green);color:#fff}
 .btn-sm{padding:5px 10px;font-size:12px}
 
-/* Portal grid */
+/* ── Portal cards ── */
 .pg{display:grid;grid-template-columns:repeat(2,1fr);gap:14px;margin-bottom:32px}
-.pc{background:#fff;border:1px solid var(--border);border-radius:9px;padding:18px}
-.pc-icon{width:34px;height:34px;border-radius:7px;display:flex;align-items:center;justify-content:center;margin-bottom:9px;font-size:16px}
+.pc{background:#fff;border:1px solid var(--border);border-radius:9px;padding:20px}
+.pc-icon{width:36px;height:36px;border-radius:8px;display:flex;align-items:center;justify-content:center;margin-bottom:10px;font-size:17px}
 .pc-title{font-size:15px;font-weight:700;color:var(--text);margin-bottom:4px}
 .pc-desc{font-size:13.5px;color:var(--muted);line-height:1.55}
 .pc-route{display:inline-block;margin-top:8px;font-size:11px;font-family:monospace;background:var(--surface);padding:2px 7px;border-radius:3px;color:var(--muted)}
 .pc-roles{margin-top:7px;display:flex;gap:4px;flex-wrap:wrap}
 .rtag{font-size:11px;font-weight:600;padding:2px 7px;border-radius:3px;background:var(--surface);color:var(--muted)}
 
-/* Pipeline */
+/* ── Pipeline ── */
 .pipeline{display:flex;align-items:flex-start;flex-wrap:wrap;gap:3px;padding:16px;background:#fff;border:1px solid var(--border);border-radius:8px;margin-bottom:20px}
 .pip{display:flex;flex-direction:column;align-items:center;gap:2px}
 .pip-l{font-size:11.5px;font-weight:600;padding:4px 8px;border-radius:3px}
 .pip-s{font-size:10px;color:var(--light)}
 .pa{color:var(--light);font-size:12px;margin:4px 2px 12px}
 
-/* Two col detail */
-.dg{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+/* ── Claim detail 3-col ── */
+.dg3{display:grid;grid-template-columns:1fr 1fr 220px;gap:10px}
+.dg-left{display:flex;flex-direction:column;gap:10px;grid-column:span 2}
+.dg-right{display:flex;flex-direction:column;gap:10px}
 .dp{background:#fff;border:1px solid var(--border);border-radius:7px;overflow:hidden}
 .dph{padding:10px 14px;border-bottom:1px solid var(--border);font-size:13px;font-weight:700;color:var(--text);display:flex;justify-content:space-between;align-items:center}
 .dpb{padding:13px 14px}
@@ -154,32 +152,32 @@ body{font-family:var(--font);background:var(--bg);color:var(--text);line-height:
 .kvk{color:var(--muted);font-weight:500}
 .kvv{font-weight:600;color:var(--text);text-align:right}
 
-/* Checklist */
+/* ── Checklist ── */
 .cl{display:flex;flex-direction:column;gap:5px}
 .ci{display:flex;align-items:center;gap:7px;font-size:13px}
-.cb{width:15px;height:15px;border-radius:3px;border:1.5px solid var(--border);display:flex;align-items:center;justify-content:center;flex-shrink:0;font-size:8px}
+.cb{width:16px;height:16px;border-radius:3px;border:1.5px solid var(--border);display:flex;align-items:center;justify-content:center;flex-shrink:0;font-size:8px}
 .cb.done{background:var(--green);border-color:var(--green);color:#fff}
 .cb.wait{border-color:var(--blue)}
 
-/* Roles grid */
+/* ── Roles grid ── */
 .rg{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin-bottom:28px}
-.rc{background:#fff;border:1px solid var(--border);border-radius:7px;padding:13px}
+.rc{background:#fff;border:1px solid var(--border);border-radius:7px;padding:14px}
 .rc-b{font-size:11px;font-weight:700;padding:2px 7px;border-radius:3px;background:var(--surface);color:var(--blue);margin-bottom:6px;display:inline-block;font-family:monospace}
 .rc-t{font-size:14px;font-weight:700;color:var(--text);margin-bottom:3px}
 .rc-d{font-size:12.5px;color:var(--muted);line-height:1.5}
 
-/* Steps */
+/* ── Steps ── */
 .steps{border:1px solid var(--border);border-radius:8px;overflow:hidden;background:#fff;margin-bottom:28px}
-.si{display:flex;align-items:flex-start;gap:12px;padding:14px 16px;border-bottom:1px solid var(--border)}
+.si{display:flex;align-items:flex-start;gap:12px;padding:15px 17px;border-bottom:1px solid var(--border)}
 .si:last-child{border-bottom:none}
 .sn{width:24px;height:24px;border-radius:50%;background:var(--blue);color:#fff;display:flex;align-items:center;justify-content:center;font-size:12px;font-weight:700;flex-shrink:0;margin-top:1px}
 .st h4{font-size:14px;font-weight:700;color:var(--text);margin-bottom:3px}
 .st p{font-size:13px;color:var(--muted);line-height:1.6}
 
-/* Product layout */
+/* ── Product layout ── */
 .pl{display:grid;grid-template-columns:1fr 240px;gap:10px}
 .cart{background:#fff;border:1px solid var(--border);border-radius:8px;overflow:hidden}
-.cart-h{padding:10px 14px;border-bottom:1px solid var(--border);font-size:13px;font-weight:700;color:var(--text)}
+.cart-h{padding:11px 14px;border-bottom:1px solid var(--border);font-size:13px;font-weight:700;color:var(--text)}
 .cart-item{padding:9px 14px;border-bottom:1px solid var(--border);display:flex;justify-content:space-between;align-items:flex-start}
 .cin{font-weight:600;color:var(--text);font-size:12.5px}
 .cis{font-size:11.5px;color:var(--muted)}
@@ -187,18 +185,23 @@ body{font-family:var(--font);background:var(--bg);color:var(--text);line-height:
 .cart-total{padding:10px 14px;display:flex;justify-content:space-between;font-size:13px;font-weight:700;border-top:1px solid var(--border)}
 .cart-foot{padding:10px 14px}
 
-/* Info boxes */
+/* ── Info boxes ── */
 .info-box{background:var(--blue-light);border:1px solid #C7D9F5;border-radius:7px;padding:14px 16px;font-size:13.5px;color:var(--blue-mid);margin-bottom:20px;line-height:1.65}
 .green-box{background:var(--green-light);border:1px solid #A7F3D0;border-radius:7px;padding:14px 16px;font-size:13.5px;color:#065F46;margin-bottom:20px;line-height:1.65}
 .divider{height:1px;background:var(--border);margin:10px 0}
-.mono{font-family:monospace;font-size:10.5px}
-.carbon{display:inline-flex;align-items:center;gap:6px;background:var(--green-light);border:1px solid #A7F3D0;border-radius:6px;padding:5px 10px;font-size:11px;font-weight:600;color:#065F46}
+.mono{font-family:monospace;font-size:11.5px}
+.carbon{display:inline-flex;align-items:center;gap:6px;background:var(--green-light);border:1px solid #A7F3D0;border-radius:6px;padding:5px 10px;font-size:12px;font-weight:600;color:#065F46}
+
+/* ── Upload slot ── */
+.upload-slot{border:1.5px dashed var(--border2);border-radius:6px;padding:14px;text-align:center;background:var(--surface);font-size:12px;color:var(--muted)}
+.upload-slot.filled{border-color:var(--green);background:var(--green-light);color:#065F46}
 
 @media(max-width:900px){
   .sidebar{display:none}
   .sec{padding:36px 20px}
   .cards4{grid-template-columns:1fr 1fr}
-  .dg{grid-template-columns:1fr}
+  .dg3{grid-template-columns:1fr}
+  .dg-left{grid-column:span 1}
   .pg{grid-template-columns:1fr}
   .rg{grid-template-columns:1fr 1fr}
   .pl{grid-template-columns:1fr}
@@ -208,12 +211,11 @@ body{font-family:var(--font);background:var(--bg);color:var(--text);line-height:
 <body>
 <div class="layout">
 
-<!-- SIDEBAR -->
+<!-- ═══ SIDEBAR ═══ -->
 <nav class="sidebar">
   <div class="sb-head">
     <a href="#overview" class="sb-logo">
-      <div class="sb-mark">C</div>
-      <span class="sb-name">CIRCL IRSP</span>
+      <div class="sb-mark">C</div><span class="sb-name">CIRCL IRSP</span>
     </a>
     <div class="sb-sub">Platform Guide</div>
   </div>
@@ -244,13 +246,13 @@ body{font-family:var(--font);background:var(--bg);color:var(--text);line-height:
       <svg class="nav-ic" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="2" y="1" width="12" height="14" rx="2"/><line x1="5" y1="5" x2="11" y2="5"/><line x1="5" y1="8" x2="9" y2="8"/></svg>
       Claim Detail
     </a>
-    <a href="#products" class="nav-a" data-s="products">
-      <svg class="nav-ic" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M2 2h2l2.5 7h5L14 5H5"/><circle cx="7" cy="13" r="1.5"/><circle cx="12" cy="13" r="1.5"/></svg>
-      Product Selection
-    </a>
     <a href="#jobs" class="nav-a" data-s="jobs">
       <svg class="nav-ic" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="2" y="6" width="12" height="9" rx="1"/><path d="M5 6V4a3 3 0 0 1 6 0v2"/></svg>
-      Jobs &amp; Compliance
+      Jobs
+    </a>
+    <a href="#sustainability" class="nav-a" data-s="sustainability">
+      <svg class="nav-ic" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M8 14s-6-3-6-8a6 6 0 0 1 12 0c0 5-6 8-6 8z"/></svg>
+      Sustainability
     </a>
     <a href="#authority" class="nav-a" data-s="authority">
       <svg class="nav-ic" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="8" cy="5" r="3"/><path d="M2 14c0-3.3 2.7-6 6-6s6 2.7 6 6"/><polyline points="7 12 8.5 13.5 11 11"/></svg>
@@ -272,78 +274,60 @@ body{font-family:var(--font);background:var(--bg);color:var(--text);line-height:
   </div>
 </nav>
 
-<!-- CONTENT -->
+<!-- ═══ CONTENT ═══ -->
 <main class="content">
 
 <!-- ── OVERVIEW ── -->
 <section class="sec" id="overview">
   <div class="sec-badge">Platform Overview</div>
   <h1 class="sec-title">Insurance Replacement Service Platform</h1>
-  <p class="sec-desc">CIRCL IRSP is a multi-portal workflow platform connecting builders, insurers, and homeowners to manage energy-efficient product replacement jobs under insurance schemes. Claims flow from lodgement through eligibility checking, product selection, installation, and customer sign-off to closure.</p>
+  <p class="sec-desc">CIRCL IRSP connects builders, insurers, and homeowners to manage energy-efficient appliance replacement jobs under insurance schemes. Claims flow from lodgement through eligibility checking, job allocation, installation, and customer authority to closure.</p>
 
   <div class="pg">
     <div class="pc">
       <div class="pc-icon" style="background:#EEF4FF">🏗️</div>
-      <div class="pc-title">Builder Portal</div>
-      <div class="pc-desc">Builders lodge claims, select eligible products, assign jobs to trade installers, and track compliance through to closure.</div>
+      <div class="pc-title">Builder Portal — Circl Operator</div>
+      <div class="pc-desc">Builders lodge claims, track the replacement pipeline, assign jobs to trade installers, and manage sustainability reporting.</div>
       <div class="pc-route">/builder/*</div>
-      <div class="pc-roles">
-        <span class="rtag">builder_admin</span><span class="rtag">builder_operator</span><span class="rtag">trade_installer</span>
-      </div>
+      <div class="pc-roles"><span class="rtag">builder_admin</span><span class="rtag">builder_operator</span><span class="rtag">trade_installer</span></div>
     </div>
     <div class="pc">
       <div class="pc-icon" style="background:#F0FDF4">🛡️</div>
-      <div class="pc-title">Insurer Portal</div>
-      <div class="pc-desc">Insurer staff have a read-only view of all claims lodged against their schemes. They can filter, review documentation, and monitor progress.</div>
+      <div class="pc-title">Insurer Portal — Read-Only Workspace</div>
+      <div class="pc-desc">Insurer staff view all claims against their schemes, monitor rebates and carbon position. No write access — fulfilment is managed by the builder.</div>
       <div class="pc-route">/insurer/*</div>
-      <div class="pc-roles">
-        <span class="rtag">insurer_admin</span><span class="rtag">insurer_viewer</span>
-      </div>
+      <div class="pc-roles"><span class="rtag">insurer_admin</span><span class="rtag">insurer_viewer</span></div>
     </div>
     <div class="pc">
       <div class="pc-icon" style="background:#FFF7ED">👤</div>
-      <div class="pc-title">Customer Portal</div>
-      <div class="pc-desc">Customers receive a secure token link. No login needed — they review the installation and provide authority to proceed with a single click.</div>
+      <div class="pc-title">Customer Portal — Token Auth</div>
+      <div class="pc-desc">Customers receive a secure link. No account needed — they view their replacement products and grant rebate authority with one click.</div>
       <div class="pc-route">/c/[token]</div>
-      <div class="pc-roles">
-        <span class="rtag">token-auth</span><span class="rtag">14-day expiry</span>
-      </div>
+      <div class="pc-roles"><span class="rtag">32-byte hex token</span><span class="rtag">14-day expiry</span></div>
     </div>
     <div class="pc">
       <div class="pc-icon" style="background:#FDF4FF">⚙️</div>
-      <div class="pc-title">Admin Console</div>
-      <div class="pc-desc">Platform admins manage organisations, schemes, eligible products, rebate rates, and can view all carbon token issuances.</div>
+      <div class="pc-title">Admin Console — DC Internal</div>
+      <div class="pc-desc">Platform admins manage schemes, SKU catalogues, organisations, users, and have cross-org visibility of all claims and the full audit log.</div>
       <div class="pc-route">/admin/*</div>
-      <div class="pc-roles">
-        <span class="rtag">platform_admin</span>
-      </div>
+      <div class="pc-roles"><span class="rtag">platform_admin</span></div>
     </div>
   </div>
 
-  <h3 style="font-size:13px;font-weight:700;color:var(--text);margin-bottom:10px">Claim Lifecycle — 10 Statuses</h3>
+  <h3 style="font-size:14px;font-weight:700;color:var(--text);margin-bottom:10px">Claim Status Pipeline</h3>
   <div class="pipeline">
-    <div class="pip"><span class="pip-l b-lodged">Lodged</span><span class="pip-s">Created</span></div>
-    <span class="pa">›</span>
-    <div class="pip"><span class="pip-l b-elig">Eligibility Check</span><span class="pip-s">NCBA adapter</span></div>
-    <span class="pa">›</span>
-    <div class="pip"><span class="pip-l b-assigned">Products Selected</span><span class="pip-s">Cart confirmed</span></div>
-    <span class="pa">›</span>
-    <div class="pip"><span class="pip-l b-assigned">Job Assigned</span><span class="pip-s">Installer set</span></div>
-    <span class="pa">›</span>
-    <div class="pip"><span class="pip-l b-progress">Job In Progress</span><span class="pip-s">On site</span></div>
-    <span class="pa">›</span>
-    <div class="pip"><span class="pip-l b-complete">Job Complete</span><span class="pip-s">GPS + photos</span></div>
-    <span class="pa">›</span>
-    <div class="pip"><span class="pip-l b-progress">Awaiting Authority</span><span class="pip-s">Customer sign-off</span></div>
-    <span class="pa">›</span>
-    <div class="pip"><span class="pip-l b-complete">Authority Received</span><span class="pip-s">Token signed</span></div>
-    <span class="pa">›</span>
-    <div class="pip"><span class="pip-l b-lodged">Order Submitted</span><span class="pip-s">Insurer notified</span></div>
-    <span class="pa">›</span>
+    <div class="pip"><span class="pip-l b-lodged">Lodged</span><span class="pip-s">Created</span></div><span class="pa">›</span>
+    <div class="pip"><span class="pip-l b-elig">Eligibility Checked</span><span class="pip-s">NCBA adapter</span></div><span class="pa">›</span>
+    <div class="pip"><span class="pip-l b-alloc">Allocated</span><span class="pip-s">Job assigned</span></div><span class="pa">›</span>
+    <div class="pip"><span class="pip-l b-prog">In Progress</span><span class="pip-s">On site</span></div><span class="pa">›</span>
+    <div class="pip"><span class="pip-l b-draft">Draft Replacement</span><span class="pip-s">Products selected</span></div><span class="pa">›</span>
+    <div class="pip"><span class="pip-l b-sub">Submitted for Fulfilment</span><span class="pip-s">Order sent</span></div><span class="pa">›</span>
+    <div class="pip"><span class="pip-l b-auth">Awaiting Authority</span><span class="pip-s">Customer link sent</span></div><span class="pa">›</span>
+    <div class="pip"><span class="pip-l b-sched">Fulfilment Scheduled</span><span class="pip-s">Authority received</span></div><span class="pa">›</span>
     <div class="pip"><span class="pip-l b-gray">Closed</span><span class="pip-s">Complete</span></div>
   </div>
 
-  <div class="info-box"><strong>Money:</strong> All amounts stored as integer cents (BIGINT). UI formats to dollars. &nbsp;·&nbsp; <strong>Carbon tokens (C20):</strong> Auto-issued on job completion — distance × category weight determines size (small 500 kg / medium 1,200 kg / large 2,400 kg CO₂e).</div>
+  <div class="info-box"><strong>Money:</strong> All amounts stored as integer cents (BIGINT). UI formats to dollars. &nbsp;·&nbsp; <strong>Carbon tokens (C20):</strong> Auto-issued on job completion — travel distance × job category weight → small (500 kg) / medium (1,200 kg) / large (2,400 kg) CO₂e.</div>
 </section>
 
 <!-- ── AUTH ── -->
@@ -353,37 +337,34 @@ body{font-family:var(--font);background:var(--bg);color:var(--text);line-height:
   <p class="sec-desc">Authentication is handled by Clerk. Users belong to organisations — a builder org, an insurer org, or the platform admin org. Your role within your organisation determines which portal and features you can access.</p>
 
   <div class="rg">
-    <div class="rc"><div class="rc-b">platform_admin</div><div class="rc-t">Platform Admin</div><div class="rc-d">Full access to everything. Manages schemes, products, orgs, and platform settings.</div></div>
-    <div class="rc"><div class="rc-b">builder_admin</div><div class="rc-t">Builder Admin</div><div class="rc-d">Full access within their builder org — claims, jobs, team members.</div></div>
-    <div class="rc"><div class="rc-b">builder_operator</div><div class="rc-t">Builder Operator</div><div class="rc-d">Creates and manages claims. Cannot manage team members or billing.</div></div>
-    <div class="rc"><div class="rc-b">trade_installer</div><div class="rc-t">Trade Installer</div><div class="rc-d">Assigned to jobs. Updates job status and submits completion evidence.</div></div>
-    <div class="rc"><div class="rc-b">insurer_admin</div><div class="rc-t">Insurer Admin</div><div class="rc-d">Full read access to their insurer org's claims. Manages insurer users.</div></div>
-    <div class="rc"><div class="rc-b">insurer_viewer</div><div class="rc-t">Insurer Viewer</div><div class="rc-d">Read-only access to claims for their insurer.</div></div>
+    <div class="rc"><div class="rc-b">platform_admin</div><div class="rc-t">Platform Admin</div><div class="rc-d">Full access to everything. Manages schemes, products, orgs, and platform settings. Can see all claims across all orgs.</div></div>
+    <div class="rc"><div class="rc-b">builder_admin</div><div class="rc-t">Builder Admin</div><div class="rc-d">Full access within their builder org — claims, jobs, team, sustainability reporting.</div></div>
+    <div class="rc"><div class="rc-b">builder_operator</div><div class="rc-t">Builder Operator</div><div class="rc-d">Creates and manages claims and jobs within their org. Cannot manage team members.</div></div>
+    <div class="rc"><div class="rc-b">trade_installer</div><div class="rc-t">Trade Installer</div><div class="rc-d">Sees jobs assigned to them. Updates job status and submits completion evidence.</div></div>
+    <div class="rc"><div class="rc-b">insurer_admin</div><div class="rc-t">Insurer Admin</div><div class="rc-d">Full read access to their insurer org's claims, rebates, and carbon data.</div></div>
+    <div class="rc"><div class="rc-b">insurer_viewer</div><div class="rc-t">Insurer Viewer</div><div class="rc-d">Read-only access to claims for their insurer organisation.</div></div>
   </div>
 
   <div class="mock">
     <div class="mock-chrome"><div class="dots"><div class="dot r"></div><div class="dot y"></div><div class="dot g"></div></div><div class="mock-url">circl.app/sign-in</div></div>
     <div style="display:grid;grid-template-columns:1fr 1fr;min-height:300px">
       <div style="background:var(--blue);padding:32px 28px;display:flex;flex-direction:column;justify-content:flex-end">
-        <div style="margin-bottom:auto;padding-top:8px;display:flex;align-items:center;gap:7px">
-          <div style="width:22px;height:22px;background:rgba(255,255,255,.15);border-radius:4px;display:flex;align-items:center;justify-content:center;color:#fff;font-size:10px;font-weight:800">C</div>
-          <span style="color:#fff;font-size:13px;font-weight:700">CIRCL</span>
-        </div>
+        <div style="margin-bottom:auto;display:flex;align-items:center;gap:7px"><div style="width:22px;height:22px;background:rgba(255,255,255,.15);border-radius:4px;display:flex;align-items:center;justify-content:center;color:#fff;font-size:10px;font-weight:800">C</div><span style="color:#fff;font-size:13px;font-weight:700">CIRCL</span></div>
         <div style="color:#fff;font-size:20px;font-weight:800;letter-spacing:-.5px;margin-bottom:6px;margin-top:32px">IRSP Platform</div>
         <div style="color:rgba(255,255,255,.65);font-size:12px;line-height:1.6;margin-bottom:20px">Insurance Replacement<br>Service Platform</div>
         <div style="display:flex;flex-direction:column;gap:7px">
-          <div style="display:flex;align-items:center;gap:8px;color:rgba(255,255,255,.8);font-size:11px"><span style="width:16px;height:16px;background:var(--green);border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:8px;color:#fff;flex-shrink:0">✓</span> Multi-portal access control</div>
-          <div style="display:flex;align-items:center;gap:8px;color:rgba(255,255,255,.8);font-size:11px"><span style="width:16px;height:16px;background:var(--green);border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:8px;color:#fff;flex-shrink:0">✓</span> Organisation-based roles</div>
-          <div style="display:flex;align-items:center;gap:8px;color:rgba(255,255,255,.8);font-size:11px"><span style="width:16px;height:16px;background:var(--green);border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:8px;color:#fff;flex-shrink:0">✓</span> Powered by Clerk SSO</div>
+          <div style="display:flex;align-items:center;gap:8px;color:rgba(255,255,255,.8);font-size:12px"><span style="width:16px;height:16px;background:var(--green);border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:8px;color:#fff;flex-shrink:0">✓</span> Organisation-based portals</div>
+          <div style="display:flex;align-items:center;gap:8px;color:rgba(255,255,255,.8);font-size:12px"><span style="width:16px;height:16px;background:var(--green);border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:8px;color:#fff;flex-shrink:0">✓</span> Role-based access control</div>
+          <div style="display:flex;align-items:center;gap:8px;color:rgba(255,255,255,.8);font-size:12px"><span style="width:16px;height:16px;background:var(--green);border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:8px;color:#fff;flex-shrink:0">✓</span> Powered by Clerk SSO</div>
         </div>
       </div>
       <div style="padding:32px 28px;display:flex;flex-direction:column;justify-content:center;background:#fff">
         <div style="font-size:16px;font-weight:700;color:var(--text);margin-bottom:3px">Sign in to CIRCL</div>
-        <div style="font-size:11.5px;color:var(--muted);margin-bottom:18px">Continue to your portal</div>
+        <div style="font-size:12px;color:var(--muted);margin-bottom:18px">Continue to your portal</div>
         <div class="f" style="margin-bottom:10px"><div class="fl">Email address</div><div class="fi v">tyler@greentech.com.au</div></div>
         <div class="f" style="margin-bottom:16px"><div class="fl">Password</div><div class="fi v">••••••••••</div></div>
-        <div class="btn btn-p" style="width:100%;margin-bottom:14px">Continue</div>
-        <div style="text-align:center;font-size:11px;color:var(--muted)">Don't have an account? <span style="color:var(--blue);font-weight:600">Sign up</span></div>
+        <div class="btn btn-p" style="width:100%;margin-bottom:12px">Continue</div>
+        <div style="text-align:center;font-size:12px;color:var(--muted)">Don't have an account? <span style="color:var(--blue);font-weight:600">Sign up</span></div>
       </div>
     </div>
   </div>
@@ -392,40 +373,80 @@ body{font-family:var(--font);background:var(--bg);color:var(--text);line-height:
 <!-- ── DASHBOARD ── -->
 <section class="sec" id="dashboard">
   <div class="sec-badge">Builder Portal</div>
-  <h2 class="sec-title">Builder Dashboard</h2>
-  <p class="sec-desc">The dashboard is the first screen after sign-in. It shows key metrics for your organisation — active claims, completed jobs, and revenue — alongside a live table of recent claims so your team can quickly navigate to what needs attention.</p>
+  <h2 class="sec-title">Dashboard</h2>
+  <p class="sec-desc">The first screen after sign-in. Shows four KPI cards for your organisation's pipeline, followed by a table of the six most recent claims so your team can quickly navigate to what needs attention.</p>
 
   <div class="mock">
-    <div class="mock-chrome"><div class="dots"><div class="dot r"></div><div class="dot y"></div><div class="dot g"></div></div><div class="mock-url">circl.app/builder/dashboard</div></div>
+    <div class="mock-chrome"><div class="dots"><div class="dot r"></div><div class="dot y"></div><div class="dot g"></div></div><div class="mock-url">circl.app/builder</div></div>
     <div class="mock-top">
-      <div class="mock-top-logo"><div class="mock-top-mark">C</div>CIRCL</div>
+      <div class="mock-logo"><div class="mock-logo-mark">C</div>Circl Operator</div>
       <div class="mock-navs">
-        <div class="mni on">Dashboard</div><div class="mni">Claims</div><div class="mni">Jobs</div><div class="mni">Products</div><div class="mni">Settings</div>
+        <div class="mni on">Dashboard</div><div class="mni">Claims</div><div class="mni">Jobs</div><div class="mni">Sustainability</div>
       </div>
       <div style="display:flex;align-items:center;gap:8px;margin-left:auto">
-        <div style="font-size:10.5px;color:var(--muted)">Greentech Solutions</div>
+        <div style="font-size:11px;color:var(--muted)">Greentech Solutions</div>
         <div class="mock-av">TF</div>
       </div>
     </div>
     <div class="mock-body">
-      <div style="font-size:14px;font-weight:700;color:var(--text);margin-bottom:3px">Good morning, Tyler</div>
-      <div style="font-size:11px;color:var(--muted);margin-bottom:14px">Here's what's happening across your claims today.</div>
+      <div style="font-size:14px;font-weight:700;color:var(--text);margin-bottom:3px">Builder Workspace</div>
+      <div style="font-size:12px;color:var(--muted);margin-bottom:14px">KPIs and recent activity across all claims you're fulfilling.</div>
       <div class="cards4">
-        <div class="kpi"><div class="kpi-l">Total Claims</div><div class="kpi-v">23</div><div class="kpi-s">All time</div></div>
-        <div class="kpi"><div class="kpi-l">Active Jobs</div><div class="kpi-v">8</div><div class="kpi-up">↑ 3 this week</div></div>
-        <div class="kpi"><div class="kpi-l">Completed</div><div class="kpi-v">14</div><div class="kpi-s">This quarter</div></div>
-        <div class="kpi"><div class="kpi-l">Total Value</div><div class="kpi-v">$48.2k</div><div class="kpi-up" style="color:var(--green)">↑ 12%</div></div>
+        <div class="kpi"><div class="kpi-l">Open claims</div><div class="kpi-v">8</div><div class="kpi-s">In progress across the pipeline</div></div>
+        <div class="kpi"><div class="kpi-l">Pipeline value</div><div class="kpi-v">$24.1k</div><div class="kpi-s">Estimated claim value</div></div>
+        <div class="kpi"><div class="kpi-l">ESG eligible</div><div class="kpi-v">6</div><div class="kpi-s">Claims with rebate potential</div></div>
+        <div class="kpi"><div class="kpi-l">Rebates this month</div><div class="kpi-v">$3,840</div><div class="kpi-up">Awarded to insurer</div></div>
       </div>
       <div class="tw">
-        <div class="tw-head"><div class="tw-title">Recent Claims</div><div class="btn btn-p btn-sm">+ New Claim</div></div>
+        <div class="tw-head"><div class="tw-title">Recent claims</div><div class="btn btn-p btn-sm">+ New claim</div></div>
         <table class="t">
-          <thead><tr><th>Claim ID</th><th>Customer</th><th>Property</th><th>Status</th><th>Insurer</th><th>Value</th><th>Date</th></tr></thead>
+          <thead><tr><th>Claim</th><th>Category</th><th>Value</th><th>Status</th><th>ESG</th><th>Lodged</th><th></th></tr></thead>
           <tbody>
-            <tr><td><span class="tid">CLM-2024-0023</span></td><td>James Mitchell</td><td>42 Harbour St, Sydney</td><td><span class="badge b-progress">Job In Progress</span></td><td>Allianz</td><td>$3,200</td><td>12 Nov</td></tr>
-            <tr><td><span class="tid">CLM-2024-0022</span></td><td>Sarah Chen</td><td>7 River Rd, Parramatta</td><td><span class="badge b-assigned">Job Assigned</span></td><td>IAG</td><td>$1,850</td><td>11 Nov</td></tr>
-            <tr><td><span class="tid">CLM-2024-0021</span></td><td>David Williams</td><td>19 Oak Ave, Chatswood</td><td><span class="badge b-elig">Eligibility Check</span></td><td>Allianz</td><td>$4,100</td><td>10 Nov</td></tr>
-            <tr><td><span class="tid">CLM-2024-0020</span></td><td>Emma Thompson</td><td>3 Palm Ct, Penrith</td><td><span class="badge b-complete">Job Complete</span></td><td>Suncorp</td><td>$2,650</td><td>9 Nov</td></tr>
-            <tr><td><span class="tid">CLM-2024-0019</span></td><td>Michael Brown</td><td>88 Crown St, Surry Hills</td><td><span class="badge b-gray">Closed</span></td><td>Allianz</td><td>$5,400</td><td>8 Nov</td></tr>
+            <tr>
+              <td><div class="tid">CLM-2024-0023</div><div class="tsub mono">ALZ-2024-00231</div></td>
+              <td><div>Hot Water System</div><div class="tsub">Continuous Flow</div></td>
+              <td>$3,200</td>
+              <td><span class="badge b-prog">In Progress</span></td>
+              <td><span class="badge b-esg">✓ ESG</span></td>
+              <td>12 Nov</td>
+              <td style="color:var(--blue);font-weight:600;font-size:12px">View →</td>
+            </tr>
+            <tr>
+              <td><div class="tid">CLM-2024-0022</div><div class="tsub mono">IAG-2024-00187</div></td>
+              <td><div>Air Conditioning</div><div class="tsub">Split System</div></td>
+              <td>$1,850</td>
+              <td><span class="badge b-alloc">Allocated</span></td>
+              <td><span class="badge b-esg">✓ ESG</span></td>
+              <td>11 Nov</td>
+              <td style="color:var(--blue);font-weight:600;font-size:12px">View →</td>
+            </tr>
+            <tr>
+              <td><div class="tid">CLM-2024-0021</div><div class="tsub mono">ALZ-2024-00214</div></td>
+              <td><div>Hot Water System</div><div class="tsub">Heat Pump</div></td>
+              <td>$4,100</td>
+              <td><span class="badge b-elig">Eligibility Checked</span></td>
+              <td><span class="badge b-esg">✓ ESG</span></td>
+              <td>10 Nov</td>
+              <td style="color:var(--blue);font-weight:600;font-size:12px">View →</td>
+            </tr>
+            <tr>
+              <td><div class="tid">CLM-2024-0020</div><div class="tsub mono">SUN-2024-00099</div></td>
+              <td><div>Air Conditioning</div><div class="tsub">Ducted</div></td>
+              <td>$2,650</td>
+              <td><span class="badge b-draft">Draft Replacement</span></td>
+              <td><span class="badge b-esg">✓ ESG</span></td>
+              <td>9 Nov</td>
+              <td style="color:var(--blue);font-weight:600;font-size:12px">View →</td>
+            </tr>
+            <tr>
+              <td><div class="tid">CLM-2024-0019</div><div class="tsub mono">ALZ-2024-00198</div></td>
+              <td><div>Washing Machine</div><div class="tsub">Front Loader</div></td>
+              <td>$5,400</td>
+              <td><span class="badge b-gray">Closed</span></td>
+              <td><span class="badge b-esg">✓ ESG</span></td>
+              <td>8 Nov</td>
+              <td style="color:var(--blue);font-weight:600;font-size:12px">View →</td>
+            </tr>
           </tbody>
         </table>
       </div>
@@ -437,41 +458,70 @@ body{font-family:var(--font);background:var(--bg);color:var(--text);line-height:
 <section class="sec alt" id="claims-list">
   <div class="sec-badge">Builder Portal</div>
   <h2 class="sec-title">Claims List</h2>
-  <p class="sec-desc">The Claims page lists all claims for your organisation with filter chips to narrow by status. Each row shows the claim ID, customer, property, insurer, scheme, status, carbon token size, and total value. Click any row to open the full claim detail.</p>
+  <p class="sec-desc">The full claims list for your organisation. Filter chips show only statuses that have claims — each chip shows a count. The table shows Claim ID (with policy number below), Category and subtype, Value, Status, ESG eligibility, and the lodgement date.</p>
 
   <div class="mock">
     <div class="mock-chrome"><div class="dots"><div class="dot r"></div><div class="dot y"></div><div class="dot g"></div></div><div class="mock-url">circl.app/builder/claims</div></div>
     <div class="mock-top">
-      <div class="mock-top-logo"><div class="mock-top-mark">C</div>CIRCL</div>
-      <div class="mock-navs"><div class="mni">Dashboard</div><div class="mni on">Claims</div><div class="mni">Jobs</div><div class="mni">Products</div></div>
+      <div class="mock-logo"><div class="mock-logo-mark">C</div>Circl Operator</div>
+      <div class="mock-navs"><div class="mni">Dashboard</div><div class="mni on">Claims</div><div class="mni">Jobs</div><div class="mni">Sustainability</div></div>
       <div class="mock-av" style="margin-left:auto">TF</div>
     </div>
     <div class="mock-body">
       <div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:10px">
-        <div style="font-size:13px;font-weight:700;color:var(--text)">Claims <span style="font-size:11.5px;color:var(--muted);font-weight:400">(23 total)</span></div>
-        <div class="btn btn-p btn-sm">+ New Claim</div>
-      </div>
-      <div style="border:1px solid var(--border);border-radius:5px;padding:5px 9px;font-size:11.5px;color:var(--muted);background:#fff;display:flex;gap:6px;align-items:center;margin-bottom:10px">
-        <svg width="11" height="11" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2"><circle cx="7" cy="7" r="5"/><line x1="10.5" y1="10.5" x2="14" y2="14"/></svg> Search by customer, ID, or address…
+        <div style="font-size:13px;font-weight:700;color:var(--text)">All claims &nbsp;<span style="font-size:11.5px;color:var(--muted);font-weight:400">23 total · 15 open · filtered to all</span></div>
+        <div class="btn btn-p btn-sm">+ New claim</div>
       </div>
       <div class="chips">
         <div class="chip on">All (23)</div>
         <div class="chip">Lodged (3)</div>
-        <div class="chip">Eligibility Check (2)</div>
-        <div class="chip">Job Assigned (4)</div>
-        <div class="chip">In Progress (4)</div>
-        <div class="chip">Job Complete (3)</div>
-        <div class="chip">Closed (7)</div>
+        <div class="chip">Eligibility Checked (2)</div>
+        <div class="chip">Allocated (4)</div>
+        <div class="chip">In Progress (3)</div>
+        <div class="chip">Draft Replacement (2)</div>
+        <div class="chip">Submitted for Fulfilment (1)</div>
+        <div class="chip">Awaiting Authority (2)</div>
+        <div class="chip">Closed (6)</div>
       </div>
       <div class="tw">
         <table class="t">
-          <thead><tr><th>Claim ID</th><th>Customer</th><th>Property</th><th>Insurer</th><th>Scheme</th><th>Status</th><th>Value</th><th>Carbon</th><th>Lodged</th></tr></thead>
+          <thead><tr><th>Claim</th><th>Category</th><th>Value</th><th>Status</th><th>ESG</th><th>Lodged</th><th></th></tr></thead>
           <tbody>
-            <tr><td><span class="tid">CLM-2024-0023</span></td><td>James Mitchell</td><td>42 Harbour St</td><td>Allianz</td><td>ESG Home 2024</td><td><span class="badge b-progress">In Progress</span></td><td>$3,200</td><td><span class="badge b-small">Small</span></td><td>12 Nov</td></tr>
-            <tr><td><span class="tid">CLM-2024-0022</span></td><td>Sarah Chen</td><td>7 River Rd</td><td>IAG</td><td>Green Rebuild</td><td><span class="badge b-assigned">Assigned</span></td><td>$1,850</td><td>—</td><td>11 Nov</td></tr>
-            <tr><td><span class="tid">CLM-2024-0021</span></td><td>David Williams</td><td>19 Oak Ave</td><td>Allianz</td><td>ESG Home 2024</td><td><span class="badge b-elig">Eligibility</span></td><td>$4,100</td><td>—</td><td>10 Nov</td></tr>
-            <tr><td><span class="tid">CLM-2024-0020</span></td><td>Emma Thompson</td><td>3 Palm Ct</td><td>Suncorp</td><td>Eco Replace</td><td><span class="badge b-complete">Complete</span></td><td>$2,650</td><td><span class="badge b-medium">Medium</span></td><td>9 Nov</td></tr>
-            <tr><td><span class="tid">CLM-2024-0019</span></td><td>Michael Brown</td><td>88 Crown St</td><td>Allianz</td><td>ESG Home 2024</td><td><span class="badge b-gray">Closed</span></td><td>$5,400</td><td><span class="badge b-large">Large</span></td><td>8 Nov</td></tr>
+            <tr>
+              <td><div class="tid">CLM-2024-0023</div><div class="tsub mono">ALZ-2024-00231</div></td>
+              <td><div>Hot Water System</div><div class="tsub">Continuous Flow</div></td>
+              <td>$3,200</td><td><span class="badge b-prog">In Progress</span></td>
+              <td><span class="badge b-esg">✓ ESG</span></td><td>12 Nov</td>
+              <td style="color:var(--blue);font-weight:600;font-size:12px">View →</td>
+            </tr>
+            <tr>
+              <td><div class="tid">CLM-2024-0022</div><div class="tsub mono">IAG-2024-00187</div></td>
+              <td><div>Air Conditioning</div><div class="tsub">Split System</div></td>
+              <td>$1,850</td><td><span class="badge b-alloc">Allocated</span></td>
+              <td><span class="badge b-esg">✓ ESG</span></td><td>11 Nov</td>
+              <td style="color:var(--blue);font-weight:600;font-size:12px">View →</td>
+            </tr>
+            <tr>
+              <td><div class="tid">CLM-2024-0021</div><div class="tsub mono">ALZ-2024-00214</div></td>
+              <td><div>Hot Water System</div><div class="tsub">Heat Pump</div></td>
+              <td>$4,100</td><td><span class="badge b-elig">Eligibility Checked</span></td>
+              <td><span class="badge b-esg">✓ ESG</span></td><td>10 Nov</td>
+              <td style="color:var(--blue);font-weight:600;font-size:12px">View →</td>
+            </tr>
+            <tr>
+              <td><div class="tid">CLM-2024-0020</div><div class="tsub mono">SUN-2024-00099</div></td>
+              <td><div>Air Conditioning</div><div class="tsub">Ducted</div></td>
+              <td>$2,650</td><td><span class="badge b-draft">Draft Replacement</span></td>
+              <td><span class="badge b-esg">✓ ESG</span></td><td>9 Nov</td>
+              <td style="color:var(--blue);font-weight:600;font-size:12px">View →</td>
+            </tr>
+            <tr>
+              <td><div class="tid">CLM-2024-0019</div><div class="tsub mono">ALZ-2024-00198</div></td>
+              <td><div>Washing Machine</div><div class="tsub">Front Loader</div></td>
+              <td>$5,400</td><td><span class="badge b-gray">Closed</span></td>
+              <td><span class="badge b-esg">✓ ESG</span></td><td>8 Nov</td>
+              <td style="color:var(--blue);font-weight:600;font-size:12px">View →</td>
+            </tr>
           </tbody>
         </table>
       </div>
@@ -483,44 +533,60 @@ body{font-family:var(--font);background:var(--bg);color:var(--text);line-height:
 <section class="sec" id="create-claim">
   <div class="sec-badge">Builder Portal</div>
   <h2 class="sec-title">Creating a Claim</h2>
-  <p class="sec-desc">New claims are lodged from the Claims page. The builder enters the customer's details, the property address, and selects the applicable insurance scheme. On submission, an eligibility check runs automatically via the NCBA adapter.</p>
-
-  <div class="steps">
-    <div class="si"><div class="sn">1</div><div class="st"><h4>Enter customer details</h4><p>First name, last name, email, and phone. A customer record is created or matched within your organisation.</p></div></div>
-    <div class="si"><div class="sn">2</div><div class="st"><h4>Add the property</h4><p>Street address where installation will occur. Each property is tied to a customer record and checked for prior claims.</p></div></div>
-    <div class="si"><div class="sn">3</div><div class="st"><h4>Select insurer &amp; scheme</h4><p>Choose the policy's insurer and applicable replacement scheme. The scheme determines which products are eligible and the rebate rates applied.</p></div></div>
-    <div class="si"><div class="sn">4</div><div class="st"><h4>Eligibility check runs automatically</h4><p>The NCBA adapter verifies the scheme is active, checks for prior claims at the property, and validates SKU efficiency. Claim status moves to <span class="badge b-elig" style="font-size:10px">Eligibility Check</span> until the check passes.</p></div></div>
-  </div>
+  <p class="sec-desc">New claims are lodged from the Claims page. The form captures customer details, property address, the appliance being replaced (category, subtype, brand, model), the policy number, and requires two photos before submission. Eligibility is checked automatically after lodgement.</p>
 
   <div class="mock">
     <div class="mock-chrome"><div class="dots"><div class="dot r"></div><div class="dot y"></div><div class="dot g"></div></div><div class="mock-url">circl.app/builder/claims/new</div></div>
     <div class="mock-top">
-      <div class="mock-top-logo"><div class="mock-top-mark">C</div>CIRCL</div>
+      <div class="mock-logo"><div class="mock-logo-mark">C</div>Circl Operator</div>
       <div class="mock-navs"><div class="mni">Dashboard</div><div class="mni on">Claims</div><div class="mni">Jobs</div></div>
       <div class="mock-av" style="margin-left:auto">TF</div>
     </div>
     <div class="mock-body w">
-      <div style="max-width:540px;margin:0 auto">
-        <div style="font-size:15px;font-weight:700;color:var(--text);margin-bottom:3px">New Claim</div>
-        <div style="font-size:11.5px;color:var(--muted);margin-bottom:18px">Lodge a new insurance replacement claim.</div>
+      <div style="max-width:580px;margin:0 auto">
+        <div style="font-size:15px;font-weight:700;color:var(--text);margin-bottom:3px">Lodge a new claim</div>
+        <div style="font-size:12px;color:var(--muted);margin-bottom:20px">Fill in all required fields to create the replacement claim record.</div>
 
         <div style="font-size:10px;font-weight:700;text-transform:uppercase;letter-spacing:.7px;color:var(--muted);margin-bottom:8px">Customer Details</div>
         <div class="fg">
-          <div class="f"><div class="fl">First name</div><div class="fi v">David</div></div>
-          <div class="f"><div class="fl">Last name</div><div class="fi v">Williams</div></div>
-          <div class="f"><div class="fl">Email</div><div class="fi v">david.w@email.com</div></div>
-          <div class="f"><div class="fl">Phone</div><div class="fi v">0412 345 678</div></div>
+          <div class="f full"><div class="fl">Full name</div><div class="fi v">David Williams</div></div>
+          <div class="f"><div class="fl">Email address <span style="color:var(--light);font-weight:400">(optional)</span></div><div class="fi v">david.w@email.com</div></div>
+          <div class="f"><div class="fl">Phone number <span style="color:var(--light);font-weight:400">(optional)</span></div><div class="fi v">0412 345 678</div></div>
         </div>
 
-        <div style="font-size:10px;font-weight:700;text-transform:uppercase;letter-spacing:.7px;color:var(--muted);margin-bottom:8px;margin-top:14px">Property</div>
+        <div style="font-size:10px;font-weight:700;text-transform:uppercase;letter-spacing:.7px;color:var(--muted);margin-bottom:8px;margin-top:16px">Property Details</div>
         <div class="fg">
-          <div class="f full"><div class="fl">Street address</div><div class="fi v">19 Oak Avenue, Chatswood NSW 2067</div></div>
+          <div class="f full"><div class="fl">Street address</div><div class="fi v">19 Oak Avenue</div></div>
+          <div class="f"><div class="fl">Suburb</div><div class="fi v">Chatswood</div></div>
+          <div class="f"><div class="fl">State</div><div class="fi v" style="display:flex;justify-content:space-between">NSW <span style="color:var(--muted)">▾</span></div></div>
+          <div class="f"><div class="fl">Postcode</div><div class="fi v">2067</div></div>
         </div>
 
-        <div style="font-size:10px;font-weight:700;text-transform:uppercase;letter-spacing:.7px;color:var(--muted);margin-bottom:8px;margin-top:14px">Insurance Scheme</div>
+        <div style="font-size:10px;font-weight:700;text-transform:uppercase;letter-spacing:.7px;color:var(--muted);margin-bottom:8px;margin-top:16px">Claim Details</div>
         <div class="fg">
-          <div class="f"><div class="fl">Insurer</div><div class="fi v" style="display:flex;justify-content:space-between">Allianz Australia <span style="color:var(--muted)">▾</span></div></div>
-          <div class="f"><div class="fl">Scheme</div><div class="fi foc" style="display:flex;justify-content:space-between">ESG Home Replacement 2024 <span style="color:var(--blue)">▾</span></div></div>
+          <div class="f"><div class="fl">Appliance category</div><div class="fi v" style="display:flex;justify-content:space-between">Hot Water System <span>▾</span></div></div>
+          <div class="f"><div class="fl">Subtype</div><div class="fi foc" style="display:flex;justify-content:space-between">Continuous Flow <span style="color:var(--blue)">▾</span></div></div>
+          <div class="f"><div class="fl">Existing brand</div><div class="fi v">Rheem</div></div>
+          <div class="f"><div class="fl">Existing model no.</div><div class="fi v mono">874-026-NLJ</div></div>
+          <div class="f"><div class="fl">Estimated value (AUD)</div><div class="fi v">$ 3,200</div></div>
+          <div class="f"><div class="fl">Policy number</div><div class="fi v mono">ALZ-2024-00231</div></div>
+          <div class="f full" style="flex-direction:row;align-items:center;gap:10px;background:var(--surface);border:1px solid var(--border);border-radius:5px;padding:9px 12px">
+            <div style="width:16px;height:16px;background:var(--blue);border-radius:3px;display:flex;align-items:center;justify-content:center;color:#fff;font-size:9px;flex-shrink:0">✓</div>
+            <div><div style="font-size:12.5px;font-weight:600;color:var(--text)">ESG eligible</div><div style="font-size:11px;color:var(--muted)">This claim qualifies for the carbon abatement scheme</div></div>
+          </div>
+        </div>
+
+        <div style="font-size:10px;font-weight:700;text-transform:uppercase;letter-spacing:.7px;color:var(--muted);margin-bottom:8px;margin-top:16px">Required Evidence</div>
+        <div class="info-box" style="margin-bottom:12px;font-size:12px">Photos are required before lodging. They're stored against the claim on submission.</div>
+        <div class="fg">
+          <div class="f">
+            <div class="fl">Appliance overview</div>
+            <div class="upload-slot filled">📷 appliance-overview.jpg<br><span style="font-size:10.5px">Tap to change</span></div>
+          </div>
+          <div class="f">
+            <div class="fl">Model / serial close-up</div>
+            <div class="upload-slot">+ Upload photo<br><span style="font-size:10.5px">Required</span></div>
+          </div>
         </div>
 
         <div style="display:flex;justify-content:flex-end;gap:8px;margin-top:18px">
@@ -536,138 +602,113 @@ body{font-family:var(--font);background:var(--bg);color:var(--text);line-height:
 <section class="sec alt" id="claim-detail">
   <div class="sec-badge">Builder Portal</div>
   <h2 class="sec-title">Claim Detail</h2>
-  <p class="sec-desc">The claim detail page is the central hub for a single claim. A two-column layout shows claim information, eligibility results, the product cart, assigned jobs, uploaded documents, and a full audit log — all in one screen.</p>
+  <p class="sec-desc">The claim detail page uses a 3-column grid — a wide 2-column main area on the left for the workflow panels, a narrow sidebar on the right for context, and a full-width audit trail at the bottom. Every state change is recorded in the audit trail.</p>
 
   <div class="mock">
     <div class="mock-chrome"><div class="dots"><div class="dot r"></div><div class="dot y"></div><div class="dot g"></div></div><div class="mock-url">circl.app/builder/claims/CLM-2024-0021</div></div>
     <div class="mock-top">
-      <div class="mock-top-logo"><div class="mock-top-mark">C</div>CIRCL</div>
+      <div class="mock-logo"><div class="mock-logo-mark">C</div>Circl Operator</div>
       <div class="mock-navs"><div class="mni">Dashboard</div><div class="mni on">Claims</div><div class="mni">Jobs</div></div>
       <div class="mock-av" style="margin-left:auto">TF</div>
     </div>
     <div class="mock-body">
       <div style="display:flex;align-items:center;gap:10px;margin-bottom:14px;flex-wrap:wrap">
         <span style="font-size:13.5px;font-weight:700;color:var(--text)">CLM-2024-0021</span>
-        <span class="badge b-elig">Eligibility Check</span>
-        <span style="font-size:11px;color:var(--muted);margin-left:auto">Lodged 10 Nov 2024 by Tyler Franko</span>
+        <span class="badge b-elig">Eligibility Checked</span>
+        <span style="font-size:11px;color:var(--muted);margin-left:auto">Lodged 10 Nov 2024</span>
       </div>
-      <div class="dg">
-        <div style="display:flex;flex-direction:column;gap:10px">
+      <!-- 3-col grid: left spans 2 cols, right is sidebar -->
+      <div class="dg3">
+        <!-- LEFT: main workflow panels (spans 2 cols) -->
+        <div class="dg-left">
           <div class="dp">
-            <div class="dph">Claim Information</div>
-            <div class="dpb">
-              <div class="kv"><span class="kvk">Customer</span><span class="kvv">David Williams</span></div>
-              <div class="kv"><span class="kvk">Property</span><span class="kvv">19 Oak Ave, Chatswood</span></div>
-              <div class="kv"><span class="kvk">Insurer</span><span class="kvv">Allianz Australia</span></div>
-              <div class="kv"><span class="kvk">Scheme</span><span class="kvv">ESG Home 2024</span></div>
-              <div class="kv"><span class="kvk">Policy No.</span><span class="kvv mono">ALZ-2024-88214</span></div>
+            <div class="dph">Claim Details</div>
+            <div class="dpb" style="display:grid;grid-template-columns:1fr 1fr;gap:8px">
+              <div class="kv" style="flex-direction:column;gap:2px;margin:0"><span class="kvk">Category</span><span style="font-weight:600;color:var(--text)">Hot Water System</span></div>
+              <div class="kv" style="flex-direction:column;gap:2px;margin:0"><span class="kvk">Subtype</span><span style="font-weight:600;color:var(--text)">Heat Pump</span></div>
+              <div class="kv" style="flex-direction:column;gap:2px;margin:0"><span class="kvk">Existing brand</span><span style="font-weight:600;color:var(--text)">Rheem</span></div>
+              <div class="kv" style="flex-direction:column;gap:2px;margin:0"><span class="kvk">Model no.</span><span style="font-weight:600;color:var(--text);font-family:monospace;font-size:11.5px">874-026-NLJ</span></div>
+              <div class="kv" style="flex-direction:column;gap:2px;margin:0"><span class="kvk">Est. value</span><span style="font-weight:600;color:var(--text)">$4,100</span></div>
+              <div class="kv" style="flex-direction:column;gap:2px;margin:0"><span class="kvk">Policy no.</span><span style="font-weight:600;color:var(--text);font-family:monospace;font-size:11.5px">ALZ-2024-00214</span></div>
             </div>
           </div>
           <div class="dp">
-            <div class="dph">Eligibility Check</div>
+            <div class="dph">Customer &amp; Property</div>
+            <div class="dpb">
+              <div class="kv"><span class="kvk">Name</span><span class="kvv">David Williams</span></div>
+              <div class="kv"><span class="kvk">Phone</span><span class="kvv">0412 345 678</span></div>
+              <div class="kv"><span class="kvk">Email</span><span class="kvv">david.w@email.com</span></div>
+              <div class="kv"><span class="kvk">Property</span><span class="kvv">19 Oak Ave, Chatswood NSW 2067</span></div>
+            </div>
+          </div>
+          <div class="dp">
+            <div class="dph">Eligibility Checks</div>
             <div class="dpb">
               <div class="cl">
                 <div class="ci"><div class="cb done">✓</div> Scheme active &amp; accepting claims</div>
                 <div class="ci"><div class="cb done">✓</div> No prior claim at this property</div>
-                <div class="ci"><div class="cb wait" style="border-color:var(--blue)"><span style="color:var(--blue);font-size:8px">…</span></div> <span style="color:var(--muted)">SKU efficiency check pending</span></div>
+                <div class="ci"><div class="cb wait" style="border-color:var(--blue)"><span style="color:var(--blue);font-size:8px">…</span></div><span style="color:var(--muted)">SKU efficiency threshold — pending</span></div>
               </div>
-              <div style="margin-top:10px;font-size:10.5px;color:var(--muted)">Adapter: NCBA (mock) · Started 10:23 AM</div>
+              <div style="margin-top:10px;font-size:11px;color:var(--muted)">Adapter: NCBA · Started 10:23 AM 10 Nov</div>
             </div>
           </div>
           <div class="dp">
-            <div class="dph">Audit Log</div>
-            <div class="dpb" style="display:flex;flex-direction:column;gap:6px">
-              <div style="font-size:11px;color:var(--muted);display:flex;gap:8px"><span class="mono" style="color:var(--light)">10:23</span><span><strong style="color:var(--text)">claim.created</strong> · Tyler Franko</span></div>
-              <div style="font-size:11px;color:var(--muted);display:flex;gap:8px"><span class="mono" style="color:var(--light)">10:23</span><span><strong style="color:var(--text)">eligibility.started</strong> · system</span></div>
+            <div class="dph">Job Lifecycle</div>
+            <div class="dpb" style="color:var(--muted);font-size:12.5px;text-align:center;padding:16px">No job assigned yet — eligibility must pass first.</div>
+          </div>
+          <div class="dp">
+            <div class="dph">Replacement Order</div>
+            <div class="dpb" style="color:var(--muted);font-size:12.5px;text-align:center;padding:16px">No order yet — created after job completion.</div>
+          </div>
+          <div class="dp">
+            <div class="dph">Evidence &amp; Compliance Photos</div>
+            <div class="dpb" style="display:flex;gap:10px">
+              <div class="upload-slot filled" style="flex:1">📷 appliance-overview.jpg</div>
+              <div class="upload-slot" style="flex:1">+ Model / serial close-up</div>
             </div>
           </div>
         </div>
-        <div style="display:flex;flex-direction:column;gap:10px">
+
+        <!-- RIGHT: sidebar panels -->
+        <div class="dg-right">
           <div class="dp">
-            <div class="dph">Products / Cart <span class="btn btn-p btn-sm">+ Add Products</span></div>
-            <div class="dpb" style="color:var(--muted);font-size:11.5px;text-align:center;padding:20px 14px">No products yet — eligibility must pass first.</div>
+            <div class="dph">Parties</div>
+            <div class="dpb">
+              <div class="kv"><span class="kvk">Insurer</span><span class="kvv">Allianz Australia</span></div>
+              <div class="kv"><span class="kvk">Builder</span><span class="kvv">Greentech Solutions</span></div>
+            </div>
           </div>
           <div class="dp">
-            <div class="dph">Jobs <span class="btn btn-s btn-sm">Assign Job</span></div>
-            <div class="dpb" style="color:var(--muted);font-size:11.5px;text-align:center;padding:20px 14px">No jobs assigned yet.</div>
+            <div class="dph">Financial Summary</div>
+            <div class="dpb">
+              <div class="kv"><span class="kvk">Claim value</span><span class="kvv">$4,100</span></div>
+              <div class="kv"><span class="kvk">Order net</span><span class="kvv">—</span></div>
+              <div class="kv"><span class="kvk">Rebate applied</span><span class="kvv">—</span></div>
+              <div class="kv"><span class="kvk">ESG eligible</span><span class="kvv"><span class="badge b-esg">✓ Yes</span></span></div>
+            </div>
           </div>
           <div class="dp">
-            <div class="dph">Documents <span class="btn btn-s btn-sm">Upload</span></div>
-            <div class="dpb" style="color:var(--muted);font-size:11.5px;text-align:center;padding:16px 14px">No uploads yet.</div>
+            <div class="dph">Customer Authority</div>
+            <div class="dpb" style="text-align:center;padding:12px">
+              <span class="badge b-auth" style="margin-bottom:8px;display:inline-block">Pending</span>
+              <div style="font-size:11.5px;color:var(--muted)">Authority link not yet sent.</div>
+              <div class="btn btn-s btn-sm" style="margin-top:10px;width:100%">Send Access Link</div>
+            </div>
+          </div>
+          <div class="dp">
+            <div class="dph">Carbon Token</div>
+            <div class="dpb" style="color:var(--muted);font-size:11.5px;text-align:center;padding:12px">Issued on job completion.</div>
           </div>
         </div>
       </div>
-    </div>
-  </div>
-</section>
 
-<!-- ── PRODUCTS ── -->
-<section class="sec" id="products">
-  <div class="sec-badge">Builder Portal</div>
-  <h2 class="sec-title">Product Selection &amp; Cart</h2>
-  <p class="sec-desc">Once eligibility passes, the builder selects replacement products from the scheme's approved catalogue. Products are filtered to the active scheme and show rebate amounts. A cart on the right tracks selected items and calculates the total claim value automatically.</p>
-
-  <div class="mock">
-    <div class="mock-chrome"><div class="dots"><div class="dot r"></div><div class="dot y"></div><div class="dot g"></div></div><div class="mock-url">circl.app/builder/claims/CLM-2024-0023/products</div></div>
-    <div class="mock-top">
-      <div class="mock-top-logo"><div class="mock-top-mark">C</div>CIRCL</div>
-      <div class="mock-navs"><div class="mni">Dashboard</div><div class="mni on">Claims</div><div class="mni">Jobs</div></div>
-      <div class="mock-av" style="margin-left:auto">TF</div>
-    </div>
-    <div class="mock-body">
-      <div style="font-size:13px;font-weight:700;color:var(--text);margin-bottom:12px">Select Replacement Products <span style="font-size:11px;color:var(--muted);font-weight:400">— ESG Home 2024</span></div>
-      <div class="pl">
-        <div class="tw">
-          <div class="tw-head">
-            <div class="chips" style="margin:0">
-              <div class="chip on">All Products</div><div class="chip">Hot Water</div><div class="chip">HVAC</div><div class="chip">Insulation</div>
-            </div>
-          </div>
-          <table class="t">
-            <thead><tr><th style="width:24px"></th><th>Product Name</th><th>SKU</th><th>Rating</th><th>Rebate</th><th>Price</th></tr></thead>
-            <tbody>
-              <tr style="background:#EEF4FF">
-                <td><div style="width:13px;height:13px;background:var(--blue);border-radius:3px;display:flex;align-items:center;justify-content:center;color:#fff;font-size:8px">✓</div></td>
-                <td><div style="font-weight:600;font-size:11.5px">Rheem 26L Continuous Flow HWS</div><div style="font-size:10px;color:var(--muted)">Natural Gas · 6 Star</div></td>
-                <td><span class="mono">RHM-CF26-NG</span></td>
-                <td><span class="badge b-green">6★ ENERGY</span></td>
-                <td style="color:var(--green);font-weight:700">$320</td>
-                <td>$1,240</td>
-              </tr>
-              <tr style="background:#EEF4FF">
-                <td><div style="width:13px;height:13px;background:var(--blue);border-radius:3px;display:flex;align-items:center;justify-content:center;color:#fff;font-size:8px">✓</div></td>
-                <td><div style="font-weight:600;font-size:11.5px">Daikin 7kW Split System AC</div><div style="font-size:10px;color:var(--muted)">Reverse cycle · A++ rated</div></td>
-                <td><span class="mono">DKN-SS7-RC</span></td>
-                <td><span class="badge b-green">A++ MEPS</span></td>
-                <td style="color:var(--green);font-weight:700">$280</td>
-                <td>$1,890</td>
-              </tr>
-              <tr>
-                <td><div style="width:13px;height:13px;border:1.5px solid var(--border);border-radius:3px"></div></td>
-                <td><div style="font-weight:600;font-size:11.5px">Bradford Ceiling Insulation R4.0</div><div style="font-size:10px;color:var(--muted)">180mm · 10m² coverage</div></td>
-                <td><span class="mono">BRD-INS-R40</span></td>
-                <td><span class="badge b-approved">R4.0</span></td>
-                <td style="color:var(--green);font-weight:700">$180</td>
-                <td>$420</td>
-              </tr>
-              <tr>
-                <td><div style="width:13px;height:13px;border:1.5px solid var(--border);border-radius:3px"></div></td>
-                <td><div style="font-weight:600;font-size:11.5px">Viridian Low-E Double Glazed Window</div><div style="font-size:10px;color:var(--muted)">1200×900mm · WERS rated</div></td>
-                <td><span class="mono">VRD-DG-1290</span></td>
-                <td><span class="badge b-lodged">WERS 4★</span></td>
-                <td style="color:var(--green);font-weight:700">$210</td>
-                <td>$650</td>
-              </tr>
-            </tbody>
-          </table>
-        </div>
-        <div class="cart">
-          <div class="cart-h">Cart (2 items)</div>
-          <div class="cart-item"><div><div class="cin">Rheem 26L HWS</div><div class="cis">RHM-CF26-NG · Rebate $320</div></div><div class="cip">$1,240</div></div>
-          <div class="cart-item"><div><div class="cin">Daikin 7kW Split AC</div><div class="cis">DKN-SS7-RC · Rebate $280</div></div><div class="cip">$1,890</div></div>
-          <div style="padding:7px 14px;font-size:11px;color:var(--muted);display:flex;justify-content:space-between"><span>Total rebate</span><span style="color:var(--green);font-weight:700">$600</span></div>
-          <div class="cart-total"><span>Total</span><span>$3,130</span></div>
-          <div class="cart-foot"><div class="btn btn-p" style="width:100%">Confirm Selection</div></div>
+      <!-- FULL WIDTH: Audit Trail -->
+      <div class="dp" style="margin-top:10px">
+        <div class="dph">Audit Trail</div>
+        <div class="dpb" style="display:flex;flex-direction:column;gap:6px">
+          <div style="font-size:12px;color:var(--muted);display:flex;gap:10px"><span style="font-family:monospace;font-size:11px;color:var(--light);flex-shrink:0">10 Nov 10:23</span><span><strong style="color:var(--text)">claim.created</strong> · Tyler Franko (builder_operator)</span></div>
+          <div style="font-size:12px;color:var(--muted);display:flex;gap:10px"><span style="font-family:monospace;font-size:11px;color:var(--light);flex-shrink:0">10 Nov 10:23</span><span><strong style="color:var(--text)">eligibility.started</strong> · system (NCBA adapter)</span></div>
+          <div style="font-size:12px;color:var(--muted);display:flex;gap:10px"><span style="font-family:monospace;font-size:11px;color:var(--light);flex-shrink:0">10 Nov 10:24</span><span><strong style="color:var(--text)">status.updated</strong> · Lodged → Eligibility Checked</span></div>
         </div>
       </div>
     </div>
@@ -675,61 +716,122 @@ body{font-family:var(--font);background:var(--bg);color:var(--text);line-height:
 </section>
 
 <!-- ── JOBS ── -->
-<section class="sec alt" id="jobs">
+<section class="sec" id="jobs">
   <div class="sec-badge">Builder Portal</div>
-  <h2 class="sec-title">Jobs &amp; Installer Compliance</h2>
-  <p class="sec-desc">Once products are confirmed, an installation job is created and assigned to a trade installer. The installer progresses the job through Assigned → En Route → On Site → Complete. Completion requires GPS coordinates and photos. A C20 carbon token is issued automatically on completion.</p>
+  <h2 class="sec-title">Jobs</h2>
+  <p class="sec-desc">Jobs are the physical work associated with a claim — created when a claim is allocated to a trade organisation. The jobs table shows the linked claim, appliance category, location (suburb + state), trade org, scheduled time, and status. Clicking a row opens the job detail including the compliance checklist.</p>
 
   <div class="mock">
     <div class="mock-chrome"><div class="dots"><div class="dot r"></div><div class="dot y"></div><div class="dot g"></div></div><div class="mock-url">circl.app/builder/jobs</div></div>
     <div class="mock-top">
-      <div class="mock-top-logo"><div class="mock-top-mark">C</div>CIRCL</div>
-      <div class="mock-navs"><div class="mni">Dashboard</div><div class="mni">Claims</div><div class="mni on">Jobs</div></div>
+      <div class="mock-logo"><div class="mock-logo-mark">C</div>Circl Operator</div>
+      <div class="mock-navs"><div class="mni">Dashboard</div><div class="mni">Claims</div><div class="mni on">Jobs</div><div class="mni">Sustainability</div></div>
       <div class="mock-av" style="margin-left:auto">TF</div>
     </div>
     <div class="mock-body">
-      <div style="display:grid;grid-template-columns:1fr 290px;gap:12px">
-        <div>
-          <div style="font-size:13px;font-weight:700;color:var(--text);margin-bottom:10px">All Jobs</div>
-          <div class="chips">
-            <div class="chip on">All</div><div class="chip">Assigned</div><div class="chip">En Route</div><div class="chip">On Site</div><div class="chip">Complete</div>
-          </div>
-          <div class="tw">
-            <table class="t">
-              <thead><tr><th>Job</th><th>Claim</th><th>Installer</th><th>Address</th><th>Status</th><th>Scheduled</th></tr></thead>
-              <tbody>
-                <tr><td><span class="tid">JOB-0041</span></td><td><span class="tid">CLM-0023</span></td><td>Mark Russo</td><td>42 Harbour St</td><td><span class="badge b-progress">On Site</span></td><td>Today 9:00 AM</td></tr>
-                <tr><td><span class="tid">JOB-0040</span></td><td><span class="tid">CLM-0022</span></td><td>Ben Tran</td><td>7 River Rd</td><td><span class="badge b-assigned">En Route</span></td><td>Today 11:30 AM</td></tr>
-                <tr><td><span class="tid">JOB-0039</span></td><td><span class="tid">CLM-0020</span></td><td>Mark Russo</td><td>3 Palm Ct</td><td><span class="badge b-complete">Complete</span></td><td>Yesterday</td></tr>
-                <tr><td><span class="tid">JOB-0038</span></td><td><span class="tid">CLM-0019</span></td><td>Lisa Park</td><td>88 Crown St</td><td><span class="badge b-complete">Complete</span></td><td>8 Nov</td></tr>
-              </tbody>
-            </table>
-          </div>
-        </div>
-        <div style="display:flex;flex-direction:column;gap:10px">
-          <div class="dp">
-            <div class="dph">JOB-0041</div>
-            <div class="dpb">
-              <div class="kv"><span class="kvk">Installer</span><span class="kvv">Mark Russo</span></div>
-              <div class="kv"><span class="kvk">Status</span><span class="kvv"><span class="badge b-progress">On Site</span></span></div>
-              <div class="kv"><span class="kvk">Arrived</span><span class="kvv">9:14 AM</span></div>
-              <div class="kv"><span class="kvk">GPS</span><span class="kvv mono" style="font-size:10px">-33.8688, 151.2093</span></div>
-              <div class="divider"></div>
-              <div style="font-size:10px;font-weight:700;color:var(--muted);margin-bottom:6px;text-transform:uppercase;letter-spacing:.5px">Compliance</div>
-              <div class="cl">
-                <div class="ci"><div class="cb done">✓</div> GPS location verified</div>
-                <div class="ci"><div class="cb done">✓</div> Before photo uploaded</div>
-                <div class="ci"><div class="cb"></div> <span style="color:var(--muted)">After photo required</span></div>
-                <div class="ci"><div class="cb"></div> <span style="color:var(--muted)">Customer sign-off</span></div>
-              </div>
-            </div>
-          </div>
-          <div class="green-box" style="margin:0">
-            <div style="font-weight:700;margin-bottom:3px">C20 Carbon Token</div>
-            Issued on completion. Travel distance × job category weight determines size.
-            <div style="margin-top:8px"><span class="carbon">🌱 Small · 500 kg CO₂e</span></div>
-          </div>
-        </div>
+      <div class="chips">
+        <div class="chip on">All</div>
+        <div class="chip">Pending Allocation</div>
+        <div class="chip">Allocated</div>
+        <div class="chip">Scheduled</div>
+        <div class="chip">In Progress</div>
+        <div class="chip">Completed</div>
+        <div class="chip">Cancelled</div>
+      </div>
+      <div class="tw">
+        <table class="t">
+          <thead><tr><th>Job</th><th>Claim</th><th>Category</th><th>Location</th><th>Trade</th><th>Scheduled</th><th>Status</th><th></th></tr></thead>
+          <tbody>
+            <tr>
+              <td><span class="tid">JOB-0041</span></td>
+              <td><span class="tid">CLM-0023</span></td>
+              <td>Hot Water System</td>
+              <td><div style="display:flex;align-items:center;gap:4px"><svg width="10" height="10" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2"><circle cx="8" cy="6" r="3"/><path d="M8 15s-6-5-6-9a6 6 0 0 1 12 0c0 4-6 9-6 9z"/></svg> Sydney NSW</div></td>
+              <td>Aquatech Plumbing</td>
+              <td><div style="display:flex;align-items:center;gap:4px"><svg width="10" height="10" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2"><circle cx="8" cy="8" r="6"/><polyline points="8 4 8 8 10 10"/></svg> Today 9:00 AM</div></td>
+              <td><span class="badge b-prog">In Progress</span></td>
+              <td style="color:var(--blue);font-weight:600;font-size:12px">Open →</td>
+            </tr>
+            <tr>
+              <td><span class="tid">JOB-0040</span></td>
+              <td><span class="tid">CLM-0022</span></td>
+              <td>Air Conditioning</td>
+              <td><div style="display:flex;align-items:center;gap:4px"><svg width="10" height="10" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2"><circle cx="8" cy="6" r="3"/><path d="M8 15s-6-5-6-9a6 6 0 0 1 12 0c0 4-6 9-6 9z"/></svg> Parramatta NSW</div></td>
+              <td>CoolBreeze HVAC</td>
+              <td><div style="display:flex;align-items:center;gap:4px"><svg width="10" height="10" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2"><circle cx="8" cy="8" r="6"/><polyline points="8 4 8 8 10 10"/></svg> Today 11:30 AM</div></td>
+              <td><span class="badge b-alloc">Allocated</span></td>
+              <td style="color:var(--blue);font-weight:600;font-size:12px">Open →</td>
+            </tr>
+            <tr>
+              <td><span class="tid">JOB-0039</span></td>
+              <td><span class="tid">CLM-0020</span></td>
+              <td>Air Conditioning</td>
+              <td><div style="display:flex;align-items:center;gap:4px"><svg width="10" height="10" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2"><circle cx="8" cy="6" r="3"/><path d="M8 15s-6-5-6-9a6 6 0 0 1 12 0c0 4-6 9-6 9z"/></svg> Penrith NSW</div></td>
+              <td>CoolBreeze HVAC</td>
+              <td><div style="display:flex;align-items:center;gap:4px"><svg width="10" height="10" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2"><circle cx="8" cy="8" r="6"/><polyline points="8 4 8 8 10 10"/></svg> Yesterday</div></td>
+              <td><span class="badge b-complete">Completed</span></td>
+              <td style="color:var(--blue);font-weight:600;font-size:12px">Open →</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+      <div style="margin-top:10px;padding:9px 13px;background:var(--surface2);border-radius:6px;font-size:12px;color:var(--muted)">Jobs are created when a claim is allocated to a trade organisation — they don't exist before that point.</div>
+    </div>
+  </div>
+</section>
+
+<!-- ── SUSTAINABILITY ── -->
+<section class="sec alt" id="sustainability">
+  <div class="sec-badge">Builder Portal</div>
+  <h2 class="sec-title">Sustainability</h2>
+  <p class="sec-desc">The Sustainability page has two sections: Carbon Abatement (always shown) tracks C20 tokens issued across all completed jobs, and Rebate Certificates (shown when the NCBA adapter is active) tracks ESG-eligible claims and rebate values lodged on behalf of the insurer.</p>
+
+  <div class="mock">
+    <div class="mock-chrome"><div class="dots"><div class="dot r"></div><div class="dot y"></div><div class="dot g"></div></div><div class="mock-url">circl.app/builder/sustainability</div></div>
+    <div class="mock-top">
+      <div class="mock-logo"><div class="mock-logo-mark">C</div>Circl Operator</div>
+      <div class="mock-navs"><div class="mni">Dashboard</div><div class="mni">Claims</div><div class="mni">Jobs</div><div class="mni on">Sustainability</div></div>
+      <div class="mock-av" style="margin-left:auto">TF</div>
+    </div>
+    <div class="mock-body">
+      <div style="font-size:13px;font-weight:700;color:var(--text);margin-bottom:12px">Carbon Abatement <span style="font-size:11px;font-weight:500;color:var(--muted);margin-left:6px">C20 · Always on</span></div>
+      <div class="cards4" style="margin-bottom:12px">
+        <div class="kpi"><div class="kpi-l">Tokens issued</div><div class="kpi-v">38</div><div class="kpi-s">All jobs</div></div>
+        <div class="kpi"><div class="kpi-l">Total CO₂e offset</div><div class="kpi-v">32.4t</div><div class="kpi-s">Across all tokens</div></div>
+        <div class="kpi"><div class="kpi-l">Jobs completed</div><div class="kpi-v">38</div><div class="kpi-s">With tokens issued</div></div>
+        <div class="kpi"><div class="kpi-l">Avg offset / job</div><div class="kpi-v">0.85t</div><div class="kpi-s">CO₂e per job</div></div>
+      </div>
+      <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin-bottom:14px">
+        <div class="kpi"><div class="kpi-l">Small tokens</div><div class="kpi-v">22</div><div class="kpi-s" style="color:var(--green)">11.0t CO₂e</div></div>
+        <div class="kpi"><div class="kpi-l">Medium tokens</div><div class="kpi-v">11</div><div class="kpi-s" style="color:var(--blue-mid)">13.2t CO₂e</div></div>
+        <div class="kpi"><div class="kpi-l">Large tokens</div><div class="kpi-v">5</div><div class="kpi-s" style="color:#7E22CE">12.0t CO₂e</div></div>
+      </div>
+      <div class="tw" style="margin-bottom:20px">
+        <div class="tw-head"><div class="tw-title">Token registry</div></div>
+        <table class="t">
+          <thead><tr><th>Token ref</th><th>Job</th><th>Size</th><th>CO₂e offset</th><th>Formula</th><th>Issued</th><th>Tx hash</th></tr></thead>
+          <tbody>
+            <tr><td><span class="tid">C20-0038</span></td><td><span class="tid">JOB-0039</span></td><td><span class="badge b-small">Small</span></td><td>500 kg</td><td>45 km × 1.5</td><td>Yesterday</td><td><span class="mono" style="color:var(--light)">0x3f8a…d9c1</span></td></tr>
+            <tr><td><span class="tid">C20-0037</span></td><td><span class="tid">JOB-0035</span></td><td><span class="badge b-medium">Medium</span></td><td>1,200 kg</td><td>80 km × 1.0</td><td>7 Nov</td><td><span class="mono" style="color:var(--light)">0x7b2c…e4f0</span></td></tr>
+            <tr><td><span class="tid">C20-0036</span></td><td><span class="tid">JOB-0031</span></td><td><span class="badge b-large">Large</span></td><td>2,400 kg</td><td>120 km × 1.5</td><td>5 Nov</td><td><span class="mono" style="color:var(--light)">0xa1d4…7e83</span></td></tr>
+          </tbody>
+        </table>
+      </div>
+
+      <div style="font-size:13px;font-weight:700;color:var(--text);margin-bottom:12px">Rebate Certificates <span style="font-size:11px;font-weight:500;color:var(--muted);margin-left:6px">NCBA · Active</span></div>
+      <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin-bottom:12px">
+        <div class="kpi"><div class="kpi-l">ESG-eligible claims</div><div class="kpi-v">19</div></div>
+        <div class="kpi"><div class="kpi-l">Orders with rebate</div><div class="kpi-v">14</div></div>
+        <div class="kpi"><div class="kpi-l">Total rebate value</div><div class="kpi-v">$18.6k</div></div>
+      </div>
+      <div class="tw">
+        <table class="t">
+          <thead><tr><th>Order</th><th>Claim</th><th>Status</th><th>Rebate value</th><th>Net cost</th><th>Submitted</th></tr></thead>
+          <tbody>
+            <tr><td><span class="tid">ORD-0014</span></td><td><span class="tid">CLM-0019</span></td><td><span class="badge b-complete">Lodged</span></td><td style="color:var(--green);font-weight:700">$1,280</td><td>$4,120</td><td>8 Nov</td></tr>
+            <tr><td><span class="tid">ORD-0013</span></td><td><span class="tid">CLM-0017</span></td><td><span class="badge b-complete">Lodged</span></td><td style="color:var(--green);font-weight:700">$960</td><td>$2,840</td><td>6 Nov</td></tr>
+          </tbody>
+        </table>
       </div>
     </div>
   </div>
@@ -739,91 +841,78 @@ body{font-family:var(--font);background:var(--bg);color:var(--text);line-height:
 <section class="sec" id="authority">
   <div class="sec-badge">Builder Portal · Customer Portal</div>
   <h2 class="sec-title">Customer Authority</h2>
-  <p class="sec-desc">Before the replacement order can be submitted to the insurer, the customer must grant authority to proceed. The builder generates a secure token link from the claim. The customer receives it by email or SMS and signs off via a no-login portal — no account required.</p>
+  <p class="sec-desc">Before a replacement order can be submitted, the customer must grant rebate authority. The builder sends a secure access link from the claim detail sidebar. The customer receives a unique URL — no account required — and either grants or refuses authority from a minimal portal page.</p>
 
   <div class="steps">
-    <div class="si"><div class="sn">1</div><div class="st"><h4>Builder sends the authority request</h4><p>Clicking "Send Authority Request" in the claim detail creates a 32-byte hex token stored against the customer with a 14-day expiry.</p></div></div>
-    <div class="si"><div class="sn">2</div><div class="st"><h4>Customer receives the link</h4><p>An email or SMS containing a unique URL such as <code style="background:var(--surface);padding:1px 5px;border-radius:3px;font-size:11px">circl.app/c/a3f8d9…</code> — no password needed to access it.</p></div></div>
-    <div class="si"><div class="sn">3</div><div class="st"><h4>Customer reviews and grants authority</h4><p>The portal shows what was installed, the insurer, and the environmental impact. One button to grant authority — claim status moves to <span class="badge b-complete" style="font-size:10px">Authority Received</span>.</p></div></div>
-    <div class="si"><div class="sn">4</div><div class="st"><h4>Builder submits the replacement order</h4><p>With authority confirmed, the builder submits the order to the insurer. The insurer can see the completed claim in their portal.</p></div></div>
+    <div class="si"><div class="sn">1</div><div class="st"><h4>Builder clicks "Send Access Link" in the claim sidebar</h4><p>This creates a 32-byte hex token tied to the customer with a 14-day expiry window and triggers the notification.</p></div></div>
+    <div class="si"><div class="sn">2</div><div class="st"><h4>Customer receives the link by email or SMS</h4><p>URL format: <code style="background:var(--surface);padding:1px 5px;border-radius:3px;font-size:12px">circl.app/c/[32-byte-token]</code> — opens without any login prompt.</p></div></div>
+    <div class="si"><div class="sn">3</div><div class="st"><h4>Customer reviews and grants or refuses authority</h4><p>The portal shows the property, replacement products selected, and a rebate authority form. Signing moves the claim to <span class="badge b-sched" style="font-size:11px">Fulfilment Scheduled</span>. Refusing captures a refusal reason and moves to <span class="badge b-refused" style="font-size:11px">Authority Refused</span>.</p></div></div>
   </div>
 
-  <div class="mock">
-    <div class="mock-chrome"><div class="dots"><div class="dot r"></div><div class="dot y"></div><div class="dot g"></div></div><div class="mock-url">circl.app/c/a3f8d92b1c4e567f89ab0cd1e2f3a4b5 🔒</div></div>
-    <div>
-      <div style="background:var(--blue);padding:14px 20px;display:flex;align-items:center;justify-content:space-between">
-        <div style="display:flex;align-items:center;gap:8px">
-          <div style="width:20px;height:20px;background:rgba(255,255,255,.15);border-radius:3px;display:flex;align-items:center;justify-content:center;font-size:9px;font-weight:800;color:#fff">C</div>
-          <span style="font-size:12px;font-weight:700;color:#fff">CIRCL</span>
-        </div>
-        <div style="font-size:10.5px;color:rgba(255,255,255,.65)">Secure Customer Portal</div>
-      </div>
-      <div style="padding:24px;background:var(--surface);max-width:460px;margin:0 auto">
-        <div style="font-size:17px;font-weight:800;color:var(--text);margin-bottom:3px">Hi James 👋</div>
-        <div style="font-size:12px;color:var(--muted);margin-bottom:18px">Greentech Solutions have completed your energy-efficient replacement job. Please review and provide your authority below.</div>
-        <div style="background:#fff;border:1px solid var(--border);border-radius:8px;padding:14px;margin-bottom:12px">
-          <div style="font-size:11.5px;font-weight:700;color:var(--text);margin-bottom:9px">Installation Summary</div>
-          <div class="kv"><span class="kvk">Property</span><span class="kvv">42 Harbour St, Sydney</span></div>
-          <div class="kv"><span class="kvk">Installer</span><span class="kvv">Greentech Solutions</span></div>
-          <div class="kv"><span class="kvk">Completed</span><span class="kvv">12 Nov 2024</span></div>
-          <div class="kv"><span class="kvk">Products installed</span><span class="kvv">Rheem HWS, Daikin Split AC</span></div>
-          <div class="kv"><span class="kvk">Insurer</span><span class="kvv">Allianz Australia</span></div>
-        </div>
-        <div style="background:var(--green-light);border:1px solid #A7F3D0;border-radius:8px;padding:12px;margin-bottom:16px">
-          <div style="font-size:11.5px;font-weight:700;color:#065F46;margin-bottom:3px">🌱 Environmental Impact</div>
-          <div style="font-size:11.5px;color:#065F46">Estimated <strong>500 kg CO₂e</strong> saved annually from your new energy-efficient appliances.</div>
-        </div>
-        <div style="display:flex;gap:8px">
-          <div class="btn btn-s" style="flex:1">I have questions</div>
-          <div class="btn btn-g" style="flex:2;font-size:12.5px">✓ Grant Authority to Proceed</div>
-        </div>
-        <div style="font-size:10px;color:var(--muted);text-align:center;margin-top:8px">Link expires 26 Nov 2024 · Secured by CIRCL</div>
-      </div>
-    </div>
-  </div>
+  <div class="info-box">The <strong>Customer Authority</strong> card in the claim detail sidebar shows the current status (Pending / Signed / Refused) and updates in real-time once the customer acts.</div>
 </section>
 
 <!-- ── INSURER ── -->
 <section class="sec alt" id="insurer">
   <div class="sec-badge">Insurer Portal</div>
   <h2 class="sec-title">Insurer Portal</h2>
-  <p class="sec-desc">Insurer users such as Allianz staff have a dedicated read-only portal. They can view all claims against their schemes, filter by builder or status, review uploaded documents, and track replacement orders — but cannot create or modify any records.</p>
+  <p class="sec-desc">Insurer users have four sections: Dashboard (open claims, monthly rebates, carbon position), Claims (full list, read-only), Sustainability (carbon tokens issued across the program), and Rebates (government rebate certificates). No write access — all fulfilment is managed by the builder.</p>
 
   <div class="mock">
     <div class="mock-chrome"><div class="dots"><div class="dot r"></div><div class="dot y"></div><div class="dot g"></div></div><div class="mock-url">circl.app/insurer/claims</div></div>
     <div class="mock-top">
-      <div class="mock-top-logo"><div class="mock-top-mark">C</div>CIRCL</div>
-      <div class="mock-navs"><div class="mni on">Claims</div><div class="mni">Orders</div><div class="mni">Reports</div></div>
+      <div class="mock-logo"><div class="mock-logo-mark">C</div>Insurer Portal</div>
+      <div class="mock-navs"><div class="mni">Dashboard</div><div class="mni on">Claims</div><div class="mni">Sustainability</div><div class="mni">Rebates</div></div>
       <div style="margin-left:auto;display:flex;align-items:center;gap:8px">
-        <div style="font-size:10.5px;color:var(--muted)">Allianz Australia</div>
+        <div style="font-size:11px;color:var(--muted)">Allianz Australia</div>
         <div class="mock-av" style="background:#E8512A">AL</div>
       </div>
     </div>
     <div class="mock-body">
       <div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:10px">
-        <div style="font-size:13px;font-weight:700;color:var(--text)">Claims — Allianz Australia</div>
-        <div style="display:flex;gap:6px">
-          <div class="fi" style="width:140px;font-size:11px;display:flex;justify-content:space-between">Filter by builder <span>▾</span></div>
-          <div class="fi" style="width:120px;font-size:11px;display:flex;justify-content:space-between">All statuses <span>▾</span></div>
-        </div>
+        <div style="font-size:13px;font-weight:700;color:var(--text)">All claims</div>
+        <div style="font-size:11.5px;color:var(--muted);padding:4px 10px;background:var(--surface2);border-radius:5px">Read-only · Fulfilment managed by Circl</div>
       </div>
       <div class="chips">
-        <div class="chip on">All (41)</div><div class="chip">Active (18)</div><div class="chip">Closed (23)</div>
+        <div class="chip on">All (41)</div>
+        <div class="chip">Allocated (8)</div>
+        <div class="chip">In Progress (5)</div>
+        <div class="chip">Awaiting Authority (4)</div>
+        <div class="chip">Closed (18)</div>
       </div>
       <div class="tw">
         <table class="t">
-          <thead><tr><th>Claim ID</th><th>Customer</th><th>Builder</th><th>Scheme</th><th>Status</th><th>Value</th><th>Carbon</th><th>Lodged</th></tr></thead>
+          <thead><tr><th>Claim</th><th>Policy #</th><th>Category / Subtype</th><th>Status</th><th>ESG</th><th>Est. Value</th><th>Lodged</th><th></th></tr></thead>
           <tbody>
-            <tr><td><span class="tid">CLM-2024-0023</span></td><td>James Mitchell</td><td>Greentech Solutions</td><td>ESG Home 2024</td><td><span class="badge b-progress">In Progress</span></td><td>$3,200</td><td><span class="badge b-small">Small</span></td><td>12 Nov</td></tr>
-            <tr><td><span class="tid">CLM-2024-0021</span></td><td>David Williams</td><td>Greentech Solutions</td><td>ESG Home 2024</td><td><span class="badge b-elig">Eligibility</span></td><td>$4,100</td><td>—</td><td>10 Nov</td></tr>
-            <tr><td><span class="tid">CLM-2024-0019</span></td><td>Michael Brown</td><td>Greentech Solutions</td><td>ESG Home 2024</td><td><span class="badge b-gray">Closed</span></td><td>$5,400</td><td><span class="badge b-large">Large</span></td><td>8 Nov</td></tr>
-            <tr><td><span class="tid">CLM-2024-0015</span></td><td>Anna Kowalski</td><td>EcoFix Builders</td><td>ESG Home 2024</td><td><span class="badge b-complete">Complete</span></td><td>$2,100</td><td><span class="badge b-medium">Medium</span></td><td>4 Nov</td></tr>
+            <tr>
+              <td><span class="tid">CLM-2024-0023</span></td>
+              <td><span class="mono">ALZ-2024-00231</span></td>
+              <td><div>Hot Water System</div><div class="tsub">Continuous Flow</div></td>
+              <td><span class="badge b-prog">In Progress</span></td>
+              <td><span class="badge b-esg">✓ ESG</span></td>
+              <td>$3,200</td><td>12 Nov</td>
+              <td style="color:var(--blue);font-weight:600;font-size:12px">View →</td>
+            </tr>
+            <tr>
+              <td><span class="tid">CLM-2024-0021</span></td>
+              <td><span class="mono">ALZ-2024-00214</span></td>
+              <td><div>Hot Water System</div><div class="tsub">Heat Pump</div></td>
+              <td><span class="badge b-elig">Eligibility Checked</span></td>
+              <td><span class="badge b-esg">✓ ESG</span></td>
+              <td>$4,100</td><td>10 Nov</td>
+              <td style="color:var(--blue);font-weight:600;font-size:12px">View →</td>
+            </tr>
+            <tr>
+              <td><span class="tid">CLM-2024-0019</span></td>
+              <td><span class="mono">ALZ-2024-00198</span></td>
+              <td><div>Washing Machine</div><div class="tsub">Front Loader</div></td>
+              <td><span class="badge b-gray">Closed</span></td>
+              <td><span class="badge b-esg">✓ ESG</span></td>
+              <td>$5,400</td><td>8 Nov</td>
+              <td style="color:var(--blue);font-weight:600;font-size:12px">View →</td>
+            </tr>
           </tbody>
         </table>
-      </div>
-      <div style="margin-top:10px;padding:9px 12px;background:var(--surface2);border-radius:6px;font-size:11px;color:var(--muted);display:flex;align-items:center;gap:6px">
-        <svg width="11" height="11" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2"><path d="M8 1L2 4v4c0 3.3 2.7 6 6 7 3.3-1 6-3.7 6-7V4z"/></svg>
-        Insurer portal is <strong style="color:var(--text)">read-only</strong>. Contact your CIRCL account manager to make changes.
       </div>
     </div>
   </div>
@@ -833,31 +922,55 @@ body{font-family:var(--font);background:var(--bg);color:var(--text);line-height:
 <section class="sec" id="customer">
   <div class="sec-badge">Customer Portal</div>
   <h2 class="sec-title">Customer Portal</h2>
-  <p class="sec-desc">Customers never need to create an account or remember a password. Their portal is a token-authenticated page — the URL itself is the key. It's intentionally minimal: show what was installed, confirm the insurer, and capture the authority sign-off.</p>
-
-  <div class="info-box"><strong>Token auth:</strong> The server validates the 32-byte hex token in the URL path, checks it hasn't expired (14-day window), and loads the claim — no Clerk session required. Tokens are stored hashed and tied to the customer record.</div>
+  <p class="sec-desc">No account or login required. The customer's unique URL is the key. The page shows three cards: Property (where the work occurred), Replacement Products (what was selected by the installer), and Rebate Authority (where they sign or refuse). The link expires after 14 days.</p>
 
   <div class="mock">
-    <div class="mock-chrome"><div class="dots"><div class="dot r"></div><div class="dot y"></div><div class="dot g"></div></div><div class="mock-url">circl.app/c/a3f8d92b… 🔒</div></div>
+    <div class="mock-chrome"><div class="dots"><div class="dot r"></div><div class="dot y"></div><div class="dot g"></div></div><div class="mock-url">circl.app/c/a3f8d92b1c4e567f89ab0cd1e2f3a4b5 🔒</div></div>
     <div>
       <div style="background:var(--blue);padding:14px 24px;display:flex;align-items:center;justify-content:space-between">
-        <div style="display:flex;align-items:center;gap:7px"><div style="width:20px;height:20px;background:rgba(255,255,255,.15);border-radius:3px;display:flex;align-items:center;justify-content:center;font-size:9px;font-weight:800;color:#fff">C</div><span style="font-size:12px;font-weight:700;color:#fff">CIRCL</span></div>
-        <div style="font-size:10px;color:rgba(255,255,255,.6)">Secure Customer Portal</div>
+        <div style="display:flex;align-items:center;gap:8px"><div style="width:20px;height:20px;background:rgba(255,255,255,.15);border-radius:3px;display:flex;align-items:center;justify-content:center;font-size:9px;font-weight:800;color:#fff">C</div><span style="font-size:13px;font-weight:700;color:#fff">CIRCL</span></div>
+        <div style="font-size:11px;color:rgba(255,255,255,.6)">Secure Customer Portal</div>
       </div>
-      <div style="padding:24px;background:#fff;max-width:420px;margin:0 auto">
-        <div style="font-size:16px;font-weight:800;color:var(--text);margin-bottom:3px">Hi James 👋</div>
-        <div style="font-size:12px;color:var(--muted);margin-bottom:18px">Your installation has been completed by Greentech Solutions. Review the details and confirm your authority below.</div>
-        <div style="background:var(--surface);border:1px solid var(--border);border-radius:8px;padding:14px;margin-bottom:12px">
-          <div style="font-size:11.5px;font-weight:700;color:var(--text);margin-bottom:8px">What was installed</div>
-          <div style="display:flex;justify-content:space-between;align-items:center;font-size:11.5px;margin-bottom:5px"><span>Rheem 26L Continuous Flow HWS</span><span class="badge b-complete">Installed ✓</span></div>
-          <div style="display:flex;justify-content:space-between;align-items:center;font-size:11.5px"><span>Daikin 7kW Split System AC</span><span class="badge b-complete">Installed ✓</span></div>
+      <div style="padding:24px;background:var(--surface)">
+        <div style="font-size:11.5px;color:var(--muted);margin-bottom:3px">Claim CLM-2024-0023</div>
+        <div style="font-size:17px;font-weight:800;color:var(--text);margin-bottom:4px">Hello, James</div>
+        <div style="font-size:13px;color:var(--muted);margin-bottom:20px;max-width:420px">Your Hot Water System replacement claim is being processed by Circl on behalf of your insurer.</div>
+
+        <div style="background:#fff;border:1px solid var(--border);border-radius:8px;padding:14px;margin-bottom:12px;display:flex;align-items:flex-start;gap:10px">
+          <svg width="16" height="16" viewBox="0 0 16 16" fill="none" stroke="var(--blue)" stroke-width="1.5" style="flex-shrink:0;margin-top:2px"><circle cx="8" cy="6" r="3"/><path d="M8 15s-6-5-6-9a6 6 0 0 1 12 0c0 4-6 9-6 9z"/></svg>
+          <div><div style="font-size:12px;font-weight:600;color:var(--muted);margin-bottom:2px">PROPERTY</div><div style="font-size:13px;font-weight:600;color:var(--text)">42 Harbour Street, Sydney NSW 2000</div></div>
         </div>
-        <div style="background:var(--green-light);border:1px solid #A7F3D0;border-radius:8px;padding:12px;margin-bottom:18px">
-          <div style="font-size:11.5px;font-weight:700;color:#065F46;margin-bottom:3px">🌱 Your Carbon Contribution</div>
-          <div style="font-size:11.5px;color:#065F46">These upgrades are estimated to save <strong>500 kg CO₂e</strong> annually.</div>
+
+        <div style="background:#fff;border:1px solid var(--border);border-radius:8px;overflow:hidden;margin-bottom:12px">
+          <div style="padding:11px 14px;border-bottom:1px solid var(--border);display:flex;align-items:center;gap:8px;font-size:13px;font-weight:700;color:var(--text)">
+            <svg width="14" height="14" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M2 2h2l2.5 7h5L14 5H5"/><circle cx="7" cy="13" r="1.5"/><circle cx="12" cy="13" r="1.5"/></svg>
+            Replacement products selected
+          </div>
+          <div style="padding:10px 14px;display:flex;justify-content:space-between;align-items:center;font-size:13px;border-bottom:1px solid var(--border)">
+            <div><div style="font-weight:600">Rheem 26L Continuous Flow HWS</div><div class="tsub">Hot Water System · SKU RHM-CF26-NG</div></div>
+            <span class="badge b-esg">Rebate applied</span>
+          </div>
+          <div style="padding:9px 14px;background:var(--green-light);font-size:12.5px;color:#065F46;font-weight:600;display:flex;justify-content:space-between">
+            <span>Total rebate applied</span><span>$320</span>
+          </div>
         </div>
-        <div class="btn btn-g" style="width:100%;font-size:13px;padding:10px">✓ Grant Authority to Proceed</div>
-        <div style="font-size:10px;color:var(--muted);text-align:center;margin-top:8px">By proceeding, you authorise Allianz to process this claim. · Expires 26 Nov 2024</div>
+
+        <div style="background:#fff;border:1px solid var(--border);border-radius:8px;overflow:hidden;margin-bottom:16px">
+          <div style="padding:11px 14px;border-bottom:1px solid var(--border);display:flex;align-items:center;gap:8px;font-size:13px;font-weight:700;color:var(--text)">
+            <svg width="14" height="14" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M8 1L2 4v4c0 3.3 2.7 6 6 7 3.3-1 6-3.7 6-7V4z"/></svg>
+            Rebate authority
+            <span class="badge b-auth" style="margin-left:auto">Pending</span>
+          </div>
+          <div style="padding:16px 14px">
+            <p style="font-size:13px;color:var(--muted);margin-bottom:14px">By granting authority you confirm the installation occurred and authorise the rebate to be applied to your policy.</p>
+            <div style="display:flex;gap:8px">
+              <div class="btn btn-s" style="flex:1">Refuse authority</div>
+              <div class="btn btn-g" style="flex:2;font-size:13px">✓ Grant rebate authority</div>
+            </div>
+          </div>
+        </div>
+
+        <div style="font-size:11px;color:var(--light);text-align:center">This link expires in 14 days. It is unique to your claim and should not be shared.</div>
       </div>
     </div>
   </div>
@@ -867,47 +980,44 @@ body{font-family:var(--font);background:var(--bg);color:var(--text);line-height:
 <section class="sec alt" id="admin">
   <div class="sec-badge">Admin Console</div>
   <h2 class="sec-title">Admin Console</h2>
-  <p class="sec-desc">Platform admins manage the foundational data that drives the whole system — organisations, schemes, eligible products, rebate rates, and adapter configuration. Admins also have visibility across all carbon token issuances and a full platform audit log.</p>
+  <p class="sec-desc">Platform admins (DC Internal) manage the foundational data — schemes, SKU catalogues, organisations, and users. The admin console also provides a cross-org view of all claims and an append-only audit log of every state change across the entire platform.</p>
 
   <div class="mock">
     <div class="mock-chrome"><div class="dots"><div class="dot r"></div><div class="dot y"></div><div class="dot g"></div></div><div class="mock-url">circl.app/admin/schemes</div></div>
     <div class="mock-top">
-      <div class="mock-top-logo"><div class="mock-top-mark">C</div>CIRCL Admin</div>
+      <div class="mock-logo"><div class="mock-logo-mark">C</div>Platform Admin</div>
       <div class="mock-navs">
-        <div class="mni">Overview</div><div class="mni">Organisations</div><div class="mni on">Schemes</div><div class="mni">Products</div><div class="mni">Carbon</div><div class="mni">Audit Log</div>
+        <div class="mni">Overview</div><div class="mni on">Schemes</div><div class="mni">Products</div><div class="mni">Orgs &amp; users</div><div class="mni">Audit log</div><div class="mni">All claims</div>
       </div>
       <div class="mock-av" style="margin-left:auto;background:#6B21A8">SA</div>
     </div>
     <div class="mock-body">
       <div style="display:grid;grid-template-columns:1fr 1fr;gap:12px">
         <div>
-          <div style="font-size:12px;font-weight:700;color:var(--text);margin-bottom:8px">Schemes</div>
+          <div style="font-size:13px;font-weight:700;color:var(--text);margin-bottom:10px">Schemes</div>
           <div class="tw">
-            <div class="tw-head"><div class="tw-title">Active Schemes</div><div class="btn btn-p btn-sm">+ New Scheme</div></div>
+            <div class="tw-head"><div class="tw-title">Active schemes</div><div class="btn btn-p btn-sm">+ New scheme</div></div>
             <table class="t">
-              <thead><tr><th>Name</th><th>Insurer</th><th>Status</th><th>Claims</th></tr></thead>
+              <thead><tr><th>Name</th><th>Authority</th><th>States</th><th>Valid from</th><th>Expiry</th></tr></thead>
               <tbody>
-                <tr><td style="font-weight:600;font-size:11.5px">ESG Home 2024</td><td>Allianz</td><td><span class="badge b-complete">Active</span></td><td>41</td></tr>
-                <tr><td style="font-weight:600;font-size:11.5px">Green Rebuild</td><td>IAG</td><td><span class="badge b-complete">Active</span></td><td>17</td></tr>
-                <tr><td style="font-weight:600;font-size:11.5px">Eco Replace</td><td>Suncorp</td><td><span class="badge b-complete">Active</span></td><td>9</td></tr>
-                <tr><td style="font-weight:600;font-size:11.5px">ESG Pilot 2023</td><td>Allianz</td><td><span class="badge b-gray">Closed</span></td><td>88</td></tr>
+                <tr><td style="font-weight:600">ESG Home 2024</td><td><span class="badge b-esg">NCBA</span></td><td>NSW, VIC</td><td>1 Jan 2024</td><td>Ongoing</td></tr>
+                <tr><td style="font-weight:600">Green Rebuild</td><td><span class="badge b-lodged">State</span></td><td>QLD</td><td>1 Mar 2024</td><td>31 Dec 2024</td></tr>
+                <tr><td style="font-weight:600">Eco Replace</td><td><span class="badge b-esg">NCBA</span></td><td>All</td><td>15 Jun 2024</td><td>Ongoing</td></tr>
+                <tr><td style="font-weight:600">ESG Pilot 2023</td><td><span class="badge b-gray">NCBA</span></td><td>NSW</td><td>1 Jul 2023</td><td style="color:var(--muted)">30 Jun 2024</td></tr>
               </tbody>
             </table>
           </div>
         </div>
         <div>
-          <div style="font-size:12px;font-weight:700;color:var(--text);margin-bottom:8px">Carbon Tokens</div>
-          <div class="cards2">
-            <div class="kpi"><div class="kpi-l">Total Issued</div><div class="kpi-v">142</div><div class="kpi-s">All time</div></div>
-            <div class="kpi"><div class="kpi-l">CO₂e Saved</div><div class="kpi-v">124t</div><div class="kpi-up">This quarter</div></div>
-          </div>
+          <div style="font-size:13px;font-weight:700;color:var(--text);margin-bottom:10px">Products (SKU catalogue)</div>
           <div class="tw">
+            <div class="tw-head"><div class="tw-title">All products</div><div class="btn btn-p btn-sm">+ New product</div></div>
             <table class="t">
-              <thead><tr><th>Token</th><th>Claim</th><th>Size</th><th>CO₂e</th><th>Issued</th></tr></thead>
+              <thead><tr><th>Product</th><th>SKU</th><th>Category</th><th>Schemes</th></tr></thead>
               <tbody>
-                <tr><td><span class="tid">C20-0142</span></td><td><span class="tid">CLM-0023</span></td><td><span class="badge b-small">Small</span></td><td>500 kg</td><td>12 Nov</td></tr>
-                <tr><td><span class="tid">C20-0141</span></td><td><span class="tid">CLM-0020</span></td><td><span class="badge b-medium">Medium</span></td><td>1,200 kg</td><td>9 Nov</td></tr>
-                <tr><td><span class="tid">C20-0140</span></td><td><span class="tid">CLM-0019</span></td><td><span class="badge b-large">Large</span></td><td>2,400 kg</td><td>8 Nov</td></tr>
+                <tr><td style="font-weight:600;font-size:12px">Rheem 26L CF HWS</td><td><span class="mono">RHM-CF26-NG</span></td><td>Hot Water</td><td>3</td></tr>
+                <tr><td style="font-weight:600;font-size:12px">Daikin 7kW Split AC</td><td><span class="mono">DKN-SS7-RC</span></td><td>Air Con</td><td>2</td></tr>
+                <tr><td style="font-weight:600;font-size:12px">Samsung 9kg FL Washer</td><td><span class="mono">SAM-WW9T-FL</span></td><td>Appliance</td><td>1</td></tr>
               </tbody>
             </table>
           </div>
